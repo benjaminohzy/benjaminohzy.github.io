@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post 11 Carousel — Website Story</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f0ece4;
+      font-family: 'Georgia', serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    /* Each slide: 1080x1080 scaled to 420px for preview */
+    .slide {
+      width: 420px;
+      height: 420px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── SLIDE LAYOUTS ──────────────────────────── */
+
+    /* S1 — Cover: dark navy */
+    .s1 {
+      background: #1a2a3a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px;
+    }
+    .s1 .eyebrow {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8ba8c0;
+      margin-bottom: 20px;
+    }
+    .s1 h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .s1 h1 span { color: #b8e986; }
+    .s1 p {
+      font-size: 13px;
+      color: #8ba8c0;
+      line-height: 1.6;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .s1 .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #b8e986, #4a9f6f);
+    }
+    .s1 .slide-num {
+      position: absolute;
+      top: 28px; right: 32px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #3d5a70;
+      letter-spacing: 1px;
+    }
+
+    /* S2-S5 — Story slides: warm cream */
+    .story {
+      background: #faf7f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 48px;
+    }
+    .story .top {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .story .attempt-tag {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b8956a;
+    }
+    .story .attempt-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a2a3a;
+      line-height: 1.1;
+    }
+    .story .body-text {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+    .story .verdict {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .verdict.fail { background: #fde8e8; color: #c0392b; }
+    .verdict.ok { background: #fef3e2; color: #b8956a; }
+    .verdict.win { background: #e8f5e2; color: #2e7d32; }
+
+    .story .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .story .name-tag {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 1px;
+    }
+    .story .slide-counter {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #ccc;
+    }
+
+    /* S6 — Learnings: dark with accent */
+    .learnings {
+      background: #1a2a3a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 44px 48px;
+      gap: 0;
+    }
+    .learnings .section-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b8e986;
+      margin-bottom: 24px;
+    }
+    .learnings .learning-row {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #2d4050;
+      align-items: flex-start;
+    }
+    .learnings .learning-row:last-child { border-bottom: none; }
+    .learnings .tool {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b8e986;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+    .learnings .desc {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      color: #a0b8cc;
+      line-height: 1.5;
+    }
+    .learnings .slide-num {
+      position: absolute;
+      top: 28px; right: 32px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #3d5a70;
+    }
+
+    /* S7 — Big quote slide */
+    .quote-slide {
+      background: #f0ece4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+      border: 2px solid #e0d8cc;
+    }
+    .quote-slide .q-mark {
+      font-size: 72px;
+      color: #d4c9b8;
+      line-height: 0.8;
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+    }
+    .quote-slide blockquote {
+      font-size: 20px;
+      line-height: 1.45;
+      color: #1a2a3a;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .quote-slide .attr {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .quote-slide .slide-num {
+      position: absolute;
+      bottom: 28px; right: 32px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #bbb;
+    }
+
+    /* S8 — Single lesson */
+    .lesson-slide {
+      background: #b8e986;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+    }
+    .lesson-slide .l-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #2e5a2e;
+      margin-bottom: 20px;
+    }
+    .lesson-slide p {
+      font-size: 22px;
+      line-height: 1.4;
+      color: #1a2a3a;
+      font-weight: 700;
+    }
+    .lesson-slide .slide-num {
+      position: absolute;
+      bottom: 28px; right: 32px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #4a7a4a;
+    }
+
+    /* S9 — CTA */
+    .cta-slide {
+      background: #1a2a3a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px;
+      gap: 0;
+    }
+    .cta-slide .cta-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8ba8c0;
+      margin-bottom: 20px;
+    }
+    .cta-slide p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 28px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .cta-slide .url {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      color: #b8e986;
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+    .cta-slide .cta-name {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 11px;
+      color: #8ba8c0;
+      letter-spacing: 1px;
+    }
+    .cta-slide .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #b8e986, #4a9f6f);
+    }
+
+    /* swipe hint */
+    .swipe-hint {
+      position: absolute;
+      bottom: 28px;
+      right: 48px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 10px;
+      color: #8ba8c0;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .swipe-hint span { font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <p class="label">Post 11 — Carousel Preview &nbsp;·&nbsp; 9 slides &nbsp;·&nbsp; 1080 x 1080</p>
+
+  <!-- SLIDE 1: Cover -->
+  <div class="slide s1">
+    <div class="eyebrow">AI Journey &nbsp;·&nbsp; Building in public</div>
+    <h1>I built my own website.<br><span>No developer.</span><br>No agency.</h1>
+    <p>Here is the full story, including the failed attempts.</p>
+    <div class="slide-num">1 / 9</div>
+    <div class="bottom-bar"></div>
+    <div class="swipe-hint"><span>→</span> swipe</div>
+  </div>
+
+  <!-- SLIDE 2: Attempt 1 -->
+  <div class="slide story">
+    <div class="top">
+      <div class="attempt-tag">Attempt 01</div>
+      <div class="attempt-name">Squarespace</div>
+      <p class="body-text">Easy plug and play. It worked well. Good looking site with minimal effort.</p>
+      <p class="body-text">Then the subscription expired. I moved on.</p>
+      <div class="verdict ok">Easy but locked</div>
+    </div>
+    <div class="bottom">
+      <div class="name-tag">Benjamin Oh</div>
+      <div class="slide-counter">2 / 9</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Attempt 2 -->
+  <div class="slide story">
+    <div class="top">
+      <div class="attempt-tag">Attempt 02</div>
+      <div class="attempt-name">WordPress + AI</div>
+      <p class="body-text">Signed up, bought a domain, tried to rebuild using AI assistance.</p>
+      <p class="body-text">Clunky. The AI could not bridge the platform gap properly. Gave up. The site still sits there.</p>
+      <div class="verdict fail">Harder than expected</div>
+    </div>
+    <div class="bottom">
+      <div class="name-tag">Benjamin Oh</div>
+      <div class="slide-counter">3 / 9</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Attempt 3 -->
+  <div class="slide story">
+    <div class="top">
+      <div class="attempt-tag">Attempt 03</div>
+      <div class="attempt-name">Lovable</div>
+      <p class="body-text">A few prompts. Generated something that looked very close to the original.</p>
+      <p class="body-text">Fast. Good enough. Shipped. First real unlock.</p>
+      <div class="verdict ok">First real unlock</div>
+    </div>
+    <div class="bottom">
+      <div class="name-tag">Benjamin Oh</div>
+      <div class="slide-counter">4 / 9</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Attempt 4 -->
+  <div class="slide story">
+    <div class="top">
+      <div class="attempt-tag">Attempt 04</div>
+      <div class="attempt-name">Claude Code + GitHub</div>
+      <p class="body-text">Built the site properly in HTML and CSS. Pushed to GitHub. Connected a custom domain via DNS records.</p>
+      <p class="body-text">Site is live. Full control. No subscription.</p>
+      <div class="verdict win">Live at benjaminoh.com</div>
+    </div>
+    <div class="bottom">
+      <div class="name-tag">Benjamin Oh</div>
+      <div class="slide-counter">5 / 9</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Tool learnings -->
+  <div class="slide learnings" style="position:relative;">
+    <div class="section-label">What each tool taught me</div>
+    <div class="learning-row">
+      <div class="tool">Squarespace</div>
+      <div class="desc">Easy but locked. Good for starting, hard to control.</div>
+    </div>
+    <div class="learning-row">
+      <div class="tool">WordPress</div>
+      <div class="desc">AI cannot bridge every platform gap. Pick your tool wisely.</div>
+    </div>
+    <div class="learning-row">
+      <div class="tool">Lovable</div>
+      <div class="desc">The first real unlock. Prompts to MVP in minutes.</div>
+    </div>
+    <div class="learning-row">
+      <div class="tool">Claude Code</div>
+      <div class="desc">Full control, no friction. The tool that actually fit the job.</div>
+    </div>
+    <div class="slide-num" style="color:#3d5a70;">6 / 9</div>
+  </div>
+
+  <!-- SLIDE 7: Quote -->
+  <div class="slide quote-slide" style="position:relative;">
+    <div class="q-mark">"</div>
+    <blockquote>Each failure pointed to the next, better tool.</blockquote>
+    <p class="attr">The barrier is not technical ability. It is the willingness to start with the wrong tool, fail fast, and move to the next one.</p>
+    <div class="slide-num">7 / 9</div>
+  </div>
+
+  <!-- SLIDE 8: The lesson -->
+  <div class="slide lesson-slide" style="position:relative;">
+    <div class="l-label">The lesson</div>
+    <p>You do not need to get it right the first time. You need to keep going until the tool fits the job.</p>
+    <div class="slide-num">8 / 9</div>
+  </div>
+
+  <!-- SLIDE 9: CTA -->
+  <div class="slide cta-slide" style="position:relative;">
+    <div class="cta-label">Start today</div>
+    <p>If you have been putting off building something because you think you are not technical enough, the tools are better than you think.<br><br>The first attempt does not have to be good. It just has to be first.</p>
+    <div class="url">benjaminoh.com</div>
+    <div class="cta-name">Benjamin Oh &nbsp;·&nbsp; AI GTM &nbsp;·&nbsp; ICF Coach</div>
+    <div class="bottom-bar"></div>
+  </div>
+
+</body>
+</html>
