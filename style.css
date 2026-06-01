@@ -108,6 +108,25 @@ nav a.active {
   line-height: 1.6;
 }
 
+/* PAGE HEADER */
+.page-header {
+  padding: 56px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* SECTION */
 section {
   padding: 56px 0;
