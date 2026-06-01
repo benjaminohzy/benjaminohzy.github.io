@@ -273,6 +273,14 @@ a {
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s;
+}
+
+.portfolio-card:hover {
+  border-color: #aaa;
 }
 
 .portfolio-card .card-media {
