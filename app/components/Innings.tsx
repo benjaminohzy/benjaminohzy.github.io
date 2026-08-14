@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const timeline = [
   {
     date: "2H 2023",
@@ -39,6 +43,129 @@ const learnings = [
   "Think wider. It started with one use case, then a skill, then an agent, now managing context across systems. Build systems, not one-off tools.",
 ];
 
+function InningsTimeline() {
+  const [active, setActive] = useState(-1);
+  const [pinned, setPinned] = useState<number | null>(null);
+  const pinnedRef = useRef<number | null>(null);
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    pinnedRef.current = pinned;
+  }, [pinned]);
+
+  useEffect(() => {
+    let ticking = false;
+
+    function updateActiveByCenter() {
+      ticking = false;
+      if (pinnedRef.current !== null) return;
+      const center = window.innerHeight / 2;
+      let closest = -1;
+      let closestDist = Infinity;
+      rowRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const mid = rect.top + rect.height / 2;
+        const dist = Math.abs(mid - center);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = i;
+        }
+      });
+      setActive(closestDist < window.innerHeight / 2 ? closest : -1);
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateActiveByCenter);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  function handleClick(i: number) {
+    if (pinned === i) {
+      setPinned(null);
+      setActive(-1);
+    } else {
+      setPinned(i);
+      setActive(i);
+    }
+  }
+
+  return (
+    <div className="mt-12">
+      {timeline.map((entry, i) => {
+        const isActive = active === i;
+        return (
+          <div
+            key={entry.date}
+            ref={(el) => {
+              rowRefs.current[i] = el;
+            }}
+            className="border-t border-line last:border-b"
+          >
+            <button
+              type="button"
+              onClick={() => handleClick(i)}
+              className="flex w-full items-center gap-4 py-3.5 text-left"
+            >
+              <span
+                className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-[3px] border font-mono text-base tabular-nums transition-colors duration-300 ${
+                  isActive
+                    ? "border-seam bg-seam text-paper"
+                    : "border-line bg-paper-2 text-muted"
+                }`}
+              >
+                {i + 1}
+              </span>
+              <span className="flex flex-col gap-0.5">
+                <span className="font-mono text-[11px] tracking-wide text-muted">
+                  {entry.date}
+                </span>
+                <span
+                  className={`font-serif text-base transition-colors duration-300 sm:text-lg ${
+                    isActive ? "text-ink" : "text-ink-soft"
+                  }`}
+                >
+                  {entry.title}
+                </span>
+              </span>
+              <span
+                className={`ml-auto flex-shrink-0 text-muted transition-transform duration-300 ${
+                  isActive ? "-rotate-180 text-seam" : ""
+                }`}
+              >
+                &#9660;
+              </span>
+            </button>
+            <div
+              className="grid transition-[grid-template-rows,opacity] duration-[450ms] ease-out"
+              style={{
+                gridTemplateRows: isActive ? "1fr" : "0fr",
+                opacity: isActive ? 1 : 0,
+              }}
+            >
+              <div className="overflow-hidden">
+                <p className="max-w-2xl pb-6 text-sm leading-relaxed text-ink-soft">
+                  {entry.body}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Innings() {
   return (
     <section
@@ -53,16 +180,7 @@ export default function Innings() {
         walked away from knowing more than when I started.
       </p>
 
-      <div className="mt-12 flex flex-col gap-10 border-l border-line pl-6 sm:pl-8">
-        {timeline.map((entry) => (
-          <div key={entry.date} className="relative">
-            <span className="absolute top-1.5 -left-[27px] h-2 w-2 rounded-full bg-seam sm:-left-[35px]" />
-            <p className="font-mono text-xs tracking-wide text-seam">{entry.date}</p>
-            <h3 className="mt-1 font-serif text-xl">{entry.title}</h3>
-            <p className="mt-2 max-w-2xl text-ink-soft">{entry.body}</p>
-          </div>
-        ))}
-      </div>
+      <InningsTimeline />
 
       <div className="mt-20 border-t border-line pt-10">
         <h3 className="font-serif text-2xl">Things I have learned</h3>

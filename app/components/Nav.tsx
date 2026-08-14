@@ -29,6 +29,16 @@ export default function Nav() {
           ))}
           <li>
             <a
+              href="https://bencoachme.lovable.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-seam"
+            >
+              Coaching site
+            </a>
+          </li>
+          <li>
+            <a
               href="mailto:g3.benjaminoh@gmail.com"
               className="rounded-full border border-line px-3 py-1 transition-colors hover:border-seam hover:text-seam"
             >
@@ -64,6 +74,17 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          <li className="pt-2">
+            <a
+              href="https://bencoachme.lovable.app/"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="block py-2 transition-colors hover:text-seam"
+            >
+              Coaching site
+            </a>
+          </li>
           <li className="pt-2">
             <a
               href="mailto:g3.benjaminoh@gmail.com"
