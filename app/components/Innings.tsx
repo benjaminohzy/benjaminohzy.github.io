@@ -115,6 +115,8 @@ function InningsTimeline() {
             <button
               type="button"
               onClick={() => handleClick(i)}
+              aria-expanded={isActive}
+              aria-controls={`inning-body-${i}`}
               className="flex w-full items-center gap-4 py-3.5 text-left"
             >
               <span
@@ -147,6 +149,9 @@ function InningsTimeline() {
               </span>
             </button>
             <div
+              id={`inning-body-${i}`}
+              role="region"
+              aria-label={`${entry.date} — ${entry.title}`}
               className="grid transition-[grid-template-rows,opacity] duration-[450ms] ease-out"
               style={{
                 gridTemplateRows: isActive ? "1fr" : "0fr",
