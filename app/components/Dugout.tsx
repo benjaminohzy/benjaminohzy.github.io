@@ -1,3 +1,5 @@
+import SubscribeForm from "./SubscribeForm";
+
 export default function Dugout() {
   return (
     <section
@@ -12,17 +14,11 @@ export default function Dugout() {
       </p>
 
       <div className="mt-12 rounded-2xl border border-line bg-paper-2/60 p-8">
-        <p className="font-mono text-xs tracking-wide text-seam">COMING SOON</p>
-        <p className="mt-4 max-w-xl text-ink-soft">
-          I am still deciding on the right home for this. In the meantime, if you want to be the
-          first to know when it launches, drop me an email.
+        <p className="max-w-xl text-ink-soft">
+          Still deciding on the right home for this. Drop your email and I&apos;ll let you know
+          the moment it launches.
         </p>
-        <a
-          href="mailto:g3.benjaminoh@gmail.com?subject=Dugout newsletter"
-          className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm text-paper transition-colors hover:bg-seam"
-        >
-          Notify me when it launches
-        </a>
+        <SubscribeForm />
       </div>
     </section>
   );
