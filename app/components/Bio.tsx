@@ -129,7 +129,7 @@ export default function Bio() {
                   <div className="relative aspect-video overflow-hidden rounded-2xl border border-line">
                     <Image
                       src={chapter.photo.src}
-                      alt={chapter.photo.caption}
+                      alt=""
                       fill
                       className="object-cover"
                     />

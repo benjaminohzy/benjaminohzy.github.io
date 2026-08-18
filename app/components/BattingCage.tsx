@@ -81,7 +81,7 @@ export default function BattingCage() {
                 {project.image ? (
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt=""
                     fill
                     className={`object-cover ${project.blurred ? "blur-md" : ""}`}
                   />
