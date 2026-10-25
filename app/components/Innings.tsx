@@ -151,7 +151,7 @@ function InningsTimeline() {
             <div
               id={`inning-body-${i}`}
               role="region"
-              aria-label={`${entry.date} — ${entry.title}`}
+              aria-label={`${entry.date}: ${entry.title}`}
               className="grid transition-[grid-template-rows,opacity] duration-[450ms] ease-out"
               style={{
                 gridTemplateRows: isActive ? "1fr" : "0fr",
@@ -181,7 +181,7 @@ export default function Innings() {
       <h2 className="mt-2 font-serif text-3xl sm:text-4xl">AI journey</h2>
       <p className="mt-4 max-w-2xl text-ink-soft">
         Some innings you score. Some you go three up, three down. In softball, each inning is a new
-        chance. This is my record of both — what I tried in my AI journey, what clicked, and what I
+        chance. This is my record of both: what I tried in my AI journey, what clicked, and what I
         walked away from knowing more than when I started.
       </p>
 

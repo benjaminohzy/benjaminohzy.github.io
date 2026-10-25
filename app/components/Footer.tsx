@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="border-t border-line pt-10 text-center">
         <p className="font-serif text-2xl">Let&apos;s connect.</p>
         <p className="mx-auto mt-3 max-w-xl text-ink-soft">
-          Whether it is AI, a career fork, or the quieter questions about what you want — if any of
+          Whether it is AI, a career fork, or the quieter questions about what you want, if any of
           it resonates, I would love to hear from you.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm">

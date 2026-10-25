@@ -44,7 +44,7 @@ const chapters = [
     title: "Now",
     label: "NOW",
     paragraphs: [
-      "I moved to London in 2024. I now lead AI commercial activation globally in consulting. I also coach people navigating transitions, career questions, and the quieter questions about what they want their life to look like.",
+      "I moved to London in 2024. I now work on taking AI offers to market at a global consulting firm. Before this, I sat on the product investment committee in the firm's tech build arm, deciding which products to fund and how much team time to put behind them. I also coach people navigating transitions, career questions, and the quieter questions about what they want their life to look like.",
       "If any of that resonates, I would love to connect.",
     ],
   },
@@ -70,8 +70,8 @@ export default function Bio() {
             National record holder. Never strikes out twice.
           </p>
           <p className="mt-6 max-w-xl text-ink-soft">
-            I lead AI commercial activation globally in consulting, and coach people navigating the
-            quieter questions about what they want their life to look like.
+            I work on taking AI offers to market at a global consulting firm, and coach people
+            navigating the quieter questions about what they want their life to look like.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a

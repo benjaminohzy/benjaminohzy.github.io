@@ -10,7 +10,7 @@ export default function Dugout() {
       <h2 className="mt-2 font-serif text-3xl sm:text-4xl">Newsletter</h2>
       <p className="mt-4 max-w-2xl text-ink-soft">
         Where you make sense of what just happened. A newsletter about what I am building,
-        learning, and figuring out — for people who are in the middle of figuring it out too.
+        learning, and figuring out, for people who are in the middle of figuring it out too.
       </p>
 
       <div className="mt-12 rounded-2xl border border-line bg-paper-2/60 p-8">

@@ -20,10 +20,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benjaminoh.com"),
-  title: "Benjamin Oh — AI GTM · Coach · Former National Athlete",
+  title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
   description: "Benjamin Oh. AI GTM, coaching, building with AI.",
   openGraph: {
-    title: "Benjamin Oh — AI GTM · Coach · Former National Athlete",
+    title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
     description: "Benjamin Oh. AI GTM, coaching, building with AI.",
     url: "https://benjaminoh.com",
     siteName: "Benjamin Oh",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benjamin Oh — AI GTM · Coach · Former National Athlete",
+    title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
     description: "Benjamin Oh. AI GTM, coaching, building with AI.",
   },
 };
