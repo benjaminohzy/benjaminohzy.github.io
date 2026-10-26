@@ -1,38 +1,46 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
+import { Caveat, DM_Sans, Fraunces } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { personJsonLd, seo } from "./site";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const caveat = Caveat({
   subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benjaminoh.com"),
-  title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
-  description: "Benjamin Oh. AI GTM, coaching, building with AI.",
+  title: seo.title,
+  description: seo.description,
+  alternates: {
+    canonical: seo.url,
+  },
   openGraph: {
-    title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
-    description: "Benjamin Oh. AI GTM, coaching, building with AI.",
-    url: "https://benjaminoh.com",
+    title: seo.title,
+    description: seo.description,
+    url: seo.url,
     siteName: "Benjamin Oh",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benjamin Oh | AI GTM · Coach · Former National Athlete",
-    description: "Benjamin Oh. AI GTM, coaching, building with AI.",
+    title: seo.title,
+    description: seo.description,
   },
 };
 
@@ -42,11 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-    >
-      <body className="grain antialiased font-sans">
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${caveat.variable}`}>
+      <body className="bg-cream font-sans text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <Analytics />
       </body>

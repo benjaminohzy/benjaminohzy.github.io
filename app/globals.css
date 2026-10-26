@@ -1,38 +1,83 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f6f2ea;
-  --color-paper-2: #efe9dd;
-  --color-ink: #1b1916;
-  --color-ink-soft: #46413a;
-  --color-muted: #6a6255;
-  --color-line: #e0d8c9;
-  --color-seam: #b23a2e;
-  --color-seam-deep: #8f2c22;
-  --color-field: #3f5d3c;
+  --color-lavender: #b3bbe6;
+  --color-cream: #faf8f0;
+  --color-navy: #2d3353;
+  --color-ink: #1b1f32;
+  --color-muted: #666e99;
 
-  --font-serif: var(--font-playfair), "Playfair Display Fallback", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-serif: var(--font-fraunces), "Iowan Old Style", Palatino, serif;
+  --font-sans: var(--font-dm-sans), "Avenir Next", "Segoe UI", sans-serif;
+  --font-hand: var(--font-caveat), "Segoe Script", cursive;
+
+  --animate-photo-in: photo-in 0.4s ease;
 }
 
 body {
-  background-color: var(--color-paper);
+  background-color: var(--color-cream);
   color: var(--color-ink);
 }
 
-/* Fractal-noise texture overlay for a paper-like feel */
-.grain {
-  position: relative;
+::selection {
+  background: #b3bbe6;
+  color: #1b1f32;
 }
 
-.grain::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.045;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+@keyframes photo-in {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hi-draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .hi-draw {
+    animation: hi-draw 1.35s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+
+  .beer-can {
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .beer-slide:hover .beer-can,
+  .beer-slide:focus-within .beer-can {
+    transform: translateX(8.5rem);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 20%;
+    }
+  }
 }
