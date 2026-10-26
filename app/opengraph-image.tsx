@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { seo } from "./site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -14,34 +15,35 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#f6f2ea",
-          color: "#1b1916",
+          background: "#FAF8F0",
+          color: "#1B1F32",
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: 20,
-            letterSpacing: 2,
-            color: "#756d60",
-            marginBottom: 24,
+            fontSize: 36,
+            fontStyle: "italic",
+            color: "#666E99",
+            marginBottom: 16,
           }}
         >
-          AI GTM · EX-PE &amp; RESTRUCTURING · FORMER NATIONAL ATHLETE · ICF-CERTIFIED COACH
+          Here&apos;s my story.
         </div>
-        <div style={{ display: "flex", fontSize: 96, fontWeight: 600, lineHeight: 1 }}>
-          Benjamin Oh
+        <div style={{ display: "flex", fontSize: 92, fontWeight: 600, lineHeight: 1 }}>
+          I&apos;m Ben.
         </div>
         <div
           style={{
             display: "flex",
-            fontSize: 30,
-            color: "#46413a",
-            marginTop: 28,
-            fontStyle: "italic",
+            fontSize: 32,
+            color: "#2D3353",
+            marginTop: 36,
+            maxWidth: 860,
+            lineHeight: 1.35,
           }}
         >
-          National record holder. Never strikes out twice.
+          {seo.description}
         </div>
       </div>
     ),
