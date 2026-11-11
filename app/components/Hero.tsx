@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { PlaceholderMark } from "./Placeholder";
-import { BOOK_A_CHAT_URL, links, primaryButtonClass, secondaryButtonClass } from "../site";
+import { links, primaryButtonClass, secondaryButtonClass } from "../site";
 
 function HiNote() {
   return (
@@ -43,29 +43,31 @@ export default function Hero() {
         </div>
 
         <div className="order-1 w-full max-w-xl">
-          {/* PLACEHOLDER / TODO: Ben to sign off this opening. Draft from his description of himself: a problem solver who asks like a journalist, never takes the first no, and has gone from distressed-company restructuring, to smaller-business transformation, to a two billion dollar BCG transformation, to what BCG sells in AI. He said "journalist"; confirm he means the way he asks, not a job title. */}
+          {/* PLACEHOLDER / TODO: Ben to sign off this opening and the firm names (Deloitte, OCBC, Churchgate). "Vantage" from his note is not on the page until he says whether it is a company. The first screen is the pattern, not a booking pitch. */}
           <PlaceholderMark />
           <p className="mt-3 text-[1.05rem] leading-relaxed text-ink">
-            I&apos;ve sat with lenders and creditors when a company was running out of money.
-            I&apos;ve worked on the transformation of smaller businesses. At BCG I worked on the
-            transformation of a two-billion-dollar company.
+            Following the process has never got me to the next step. Finding another way has.
+          </p>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
+            Every internship I&apos;d applied for had already said no, so I went to the career fair
+            and talked to the recruiters. That became an interview at OCBC, and then the internship.
+            I turned down a written offer from Deloitte in audit when I had no other role. In
+            the middle of Covid I left Borrelli Walsh for Churchgate, when my MD asked if I was
+            sure, because I&apos;d learned what I was there to learn. London was the same pattern.
+            External recruiters said no. Internal recruiters said no. So did my own manager. I kept
+            at it until a role came with visa sponsorship.
           </p>
           <h1 className="mt-8 font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
           <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
-            I come at the problem from a different point of view. I keep asking, and I don&apos;t
-            take the first no. These days that question is what BCG should sell in AI, and how to
-            sell it.
+            I keep asking what else is possible. That is what I bring to a team or an organisation:
+            another route to the next step. Right now that question is what to sell in AI, and how
+            to sell it.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
-              href={BOOK_A_CHAT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className={`${primaryButtonClass} w-full sm:w-auto`}
-            >
-              Book a chat
+            <a href="#background" className={`${primaryButtonClass} w-full sm:w-auto`}>
+              Read the background
             </a>
             <a
               href={links.linkedin}

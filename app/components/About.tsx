@@ -9,8 +9,8 @@ export default function About() {
     <section id="background" className={sectionClass}>
       <h2 className={headingClass}>Background</h2>
       <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink">
-        I&apos;m Ben. I work on how BCG sells AI, and I coach people who feel stuck. The longer
-        version is below.
+        I&apos;m Ben. This is how I got here, and what I can bring to a team. I also coach people
+        who feel stuck.
       </p>
 
       <div className="mt-4 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
@@ -73,6 +73,17 @@ export default function About() {
       </figure>
 
       <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
+        {/* PLACEHOLDER / TODO: Ben to confirm this sits after university, and that Deloitte and OCBC can be named. Order of the two episodes is his correction: applications failed, the career fair led to OCBC, and he turned down Deloitte with no other role. */}
+        <h3 className={sectionHeading}>The career fair</h3>
+        <p>
+          I applied for every internship and got none of them. I went to the career fair anyway and
+          talked to the recruiters. One conversation became an interview at OCBC, then a summer
+          internship in banking. I also turned down a written offer from Deloitte in audit when I
+          had no other role.
+        </p>
+      </div>
+
+      <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
         <h3 className={sectionHeading}>Sierra Leone</h3>
         <p>
           That job was in restructuring at Borrelli Walsh. For three years I worked on companies
@@ -96,6 +107,15 @@ export default function About() {
       </figure>
 
       <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
+        {/* PLACEHOLDER / TODO: Ben to confirm the Churchgate spelling, and whether this is the private-equity chapter below or a separate job. */}
+        <h3 className={sectionHeading}>Churchgate</h3>
+        <p>
+          I left Borrelli Walsh in the middle of Covid to join Churchgate. My MD texted to ask if I
+          was sure. I&apos;d got to the end of what I was going to learn there, so I went.
+        </p>
+      </div>
+
+      <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
         <h3 className={sectionHeading}>Since then</h3>
         {/* PLACEHOLDER / TODO: Ben to add one line on what the portfolio business was, or confirm this stays vague. */}
         <div className="space-y-2">
@@ -105,10 +125,17 @@ export default function About() {
             Fewer people, more hats. I did the numbers, and also anything else that needed doing.
           </p>
         </div>
-        <p>
-          In 2021 I joined BCG in Singapore, in the transformation team. In November 2024 I moved
-          to London.
-        </p>
+        <p>In 2021 I joined BCG in Singapore, in the transformation team.</p>
+        {/* PLACEHOLDER / TODO: Ben to confirm the two-billion-dollar line, and whether the visa-sponsored role was the London move. "Vantage" is left out until he says what it refers to. */}
+        <div className="space-y-2">
+          <PlaceholderMark />
+          <p>
+            Part of that work was the transformation of a two-billion-dollar company. The move to
+            London was a long run of nos, from external recruiters, internal recruiters, and my own
+            manager. I kept at it until a role came with visa sponsorship. In November 2024 I moved
+            to London.
+          </p>
+        </div>
         {/* PLACEHOLDER / TODO: Ben to confirm dates for the BCGX move and the current role, and this plain-English wording. */}
         <div className="space-y-2">
           <PlaceholderMark />
