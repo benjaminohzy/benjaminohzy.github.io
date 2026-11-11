@@ -17,7 +17,6 @@ export default function About() {
         {/* PLACEHOLDER / TODO: Ben to refine the early-life wording. Split from the draft hero paragraph. */}
         <div className="space-y-2">
           <h3 className={sectionHeading}>Singapore</h3>
-          <PlaceholderMark />
           <p>
             I grew up in Singapore in a family that didn&apos;t have much. My parents worked seven
             days a week. I&apos;m the eldest of three, and I trained in finance and accounting.
@@ -28,7 +27,6 @@ export default function About() {
 
         <div className="space-y-2">
           <h3 className={sectionHeading}>2015 SEA Games</h3>
-          <PlaceholderMark />
           <p>
             In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan
             anyway, and made it back. We won bronze with my whole family in the stands. Then
