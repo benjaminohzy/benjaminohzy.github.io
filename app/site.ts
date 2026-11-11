@@ -56,6 +56,9 @@ export const seo = {
 export const heroStory =
   "I grew up in Singapore in a family that didn't have much. My parents worked seven days a week. I repeated a year of junior college because my grades weren't good enough. In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan anyway, and made it back. We won bronze with my whole family in the stands. Then average uni results and a lot of rejection emails.";
 
+/** Portrait on the cover, before a chapter is chosen. */
+export const coverPhoto = "/images/headshot.jpg";
+
 /**
  * Click order follows the photos already on the page: the cover headshot,
  * then the SEA Games photo in About, then the Sierra Leone photo in About.

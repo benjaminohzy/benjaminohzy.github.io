@@ -5,6 +5,7 @@ import Image from "next/image";
 import { PlaceholderMark } from "./Placeholder";
 import {
   BOOK_A_CHAT_URL,
+  coverPhoto,
   heroStory,
   links,
   primaryButtonClass,
@@ -71,7 +72,7 @@ export default function Hero() {
 
   const reading = active !== null;
   const chapter = active === null ? null : storyChapters[active];
-  const photo = chapter?.photo ?? storyChapters[0].photo;
+  const photo = chapter?.photo ?? coverPhoto;
   const story = chapter?.text ?? heroStory;
   const spoken =
     active === null
