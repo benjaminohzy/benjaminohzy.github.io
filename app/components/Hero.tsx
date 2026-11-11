@@ -114,7 +114,7 @@ export default function Hero() {
                     fill
                     preload
                     sizes="(min-width: 1024px) 300px, 78vw"
-                    className="object-cover object-[center_30%]"
+                    className={`object-cover ${reading && chapter?.focus ? chapter.focus : "object-[center_30%]"}`}
                   />
                 </span>
               </button>
@@ -176,8 +176,7 @@ export default function Hero() {
             inert={!reading}
           >
             <div className="overflow-hidden">
-              <PlaceholderMark />
-              <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+              <h2 className="font-serif text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                 {chapter?.label}
               </h2>
             </div>

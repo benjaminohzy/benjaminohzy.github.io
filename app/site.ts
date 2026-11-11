@@ -57,42 +57,25 @@ export const heroStory =
   "I grew up in Singapore in a family that didn't have much. My parents worked seven days a week. I repeated a year of junior college because my grades weren't good enough. In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan anyway, and made it back. We won bronze with my whole family in the stands. Then average uni results and a lot of rejection emails.";
 
 /**
- * Chapter photos live in this one array. Every chapter uses the headshot
- * until real photos arrive. Replace `photo` and nothing else needs to change.
- *
- * PLACEHOLDER: chapter text is a split of the draft hero paragraph.
- * No new facts. Ben to refine the wording.
+ * Click order follows the photos already on the page: the cover headshot,
+ * then the SEA Games photo in About, then the Sierra Leone photo in About.
+ * `label` is the section header. `text` is existing copy, not new facts.
+ * `focus` is the crop for the square frame.
  */
 export const storyChapters = [
   {
-    id: "home",
-    label: "Growing up",
-    photo: "/images/headshot.jpg",
-    text: "I grew up in Singapore in a family that didn't have much. My parents worked seven days a week.",
+    id: "seagames",
+    label: "How I got here",
+    photo: "/images/seagames.jpg",
+    focus: "object-center",
+    text: "In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan anyway, and made it back. We won bronze with my whole family in the stands.",
   },
   {
-    id: "school",
-    label: "Junior college",
-    photo: "/images/headshot.jpg",
-    text: "I repeated a year of junior college because my grades weren't good enough. In 2015 I got cut from the SEA Games softball squad.",
-  },
-  {
-    id: "japan",
-    label: "Japan",
-    photo: "/images/headshot.jpg",
-    text: "I went to a training camp in Japan anyway. I made it back.",
-  },
-  {
-    id: "bronze",
-    label: "Bronze",
-    photo: "/images/headshot.jpg",
-    text: "We won bronze. My whole family was in the stands.",
-  },
-  {
-    id: "after",
-    label: "After",
-    photo: "/images/headshot.jpg",
-    text: "Then average uni results. And a lot of rejection emails.",
+    id: "sierra-leone",
+    label: "Sierra Leone",
+    photo: "/images/sierra-leone-1.jpg",
+    focus: "object-left",
+    text: "That job was in restructuring at Borrelli Walsh. For three years I worked on companies that were in trouble across Southeast Asia, and once on site in Sierra Leone.",
   },
 ] as const;
 
