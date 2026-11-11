@@ -43,27 +43,19 @@ export default function Hero() {
         </div>
 
         <div className="order-1 w-full max-w-xl">
-          {/* PLACEHOLDER / TODO: Ben to sign off this opening and the firm names (Deloitte, OCBC, Churchgate). "Vantage" from his note is not on the page until he says whether it is a company. The first screen is the pattern, not a booking pitch. */}
+          {/* PLACEHOLDER / TODO: Ben to sign off this short opening. The examples stay in Background. */}
           <PlaceholderMark />
           <p className="mt-3 text-[1.05rem] leading-relaxed text-ink">
-            Following the process has never got me to the next step. Finding another way has.
+            Following the process has never got me to the next step. Finding the way has.
           </p>
           <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
-            Every internship I&apos;d applied for had already said no, so I went to the career fair
-            and talked to the recruiters. That became an interview at OCBC, and then the internship.
-            I turned down a written offer from Deloitte in audit when I had no other role. In
-            the middle of Covid I left Borrelli Walsh for Churchgate, when my MD asked if I was
-            sure, because I&apos;d learned what I was there to learn. London was the same pattern.
-            External recruiters said no. Internal recruiters said no. So did my own manager. I kept
-            at it until a role came with visa sponsorship.
+            I&apos;ve done that throughout my life. That&apos;s what got me here.
           </p>
           <h1 className="mt-8 font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
           <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
-            I keep asking what else is possible. That is what I bring to a team or an organisation:
-            another route to the next step. Right now that question is what to sell in AI, and how
-            to sell it.
+            Right now I work on what to sell in AI, and how to sell it.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a href="#background" className={`${primaryButtonClass} w-full sm:w-auto`}>
