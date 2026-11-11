@@ -55,7 +55,8 @@ export default function Hero() {
             I&apos;m Ben.
           </h1>
           <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
-            Right now I work on what to sell in AI, and how to sell it.
+            Right now I work on what to sell in AI, how to sell it, and how to drive adoption.
+            Enablement, GTM, and commercialisation.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a href="#background" className={`${primaryButtonClass} w-full sm:w-auto`}>
