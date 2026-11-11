@@ -17,11 +17,15 @@ function showIndex(index: number) {
   return ((index % count) + count) % count;
 }
 
-function HiNote() {
+function HiNote({ reading }: { reading: boolean }) {
   return (
     <p
       aria-hidden="true"
-      className="hi-draw pointer-events-none absolute top-0 left-1 -rotate-6 py-1 font-hand text-[2.15rem] leading-none text-navy sm:text-[2.4rem] lg:top-[18%] lg:left-0 lg:text-[2.6rem]"
+      className={`hi-draw pointer-events-none absolute -rotate-6 py-1 font-hand leading-none text-navy transition-[font-size,top,left] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+        reading
+          ? "top-0 left-0 text-[1.55rem] lg:top-[6%] lg:text-[1.7rem]"
+          : "top-0 left-1 text-[2.15rem] sm:text-[2.4rem] lg:top-[18%] lg:left-0 lg:text-[2.6rem]"
+      }`}
     >
       hi :)
     </p>
@@ -65,6 +69,7 @@ export default function Hero() {
     document.getElementById(`chapter-dot-${nextIndex}`)?.focus();
   }
 
+  const reading = active !== null;
   const chapter = active === null ? null : storyChapters[active];
   const photo = chapter?.photo ?? storyChapters[0].photo;
   const story = chapter?.text ?? heroStory;
@@ -80,9 +85,13 @@ export default function Hero() {
     >
       <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-16">
         <div className="w-full shrink-0 lg:w-auto">
-          <div className="relative mx-auto w-fit pt-10 lg:pt-0 lg:pl-20">
-            <HiNote />
-            <div className="relative">
+          <div
+            className={`relative mx-auto w-fit transition-[padding] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              reading ? "pt-7 lg:pt-0 lg:pl-14" : "pt-10 lg:pt-0 lg:pl-20"
+            }`}
+          >
+            <HiNote reading={reading} />
+            <div className="relative mx-auto w-fit">
               <div
                 aria-hidden="true"
                 className="absolute -bottom-3 -left-3 h-full w-full rounded-[1.7rem] bg-lavender"
@@ -92,7 +101,11 @@ export default function Hero() {
                 onClick={next}
                 onKeyDown={onPhotoKeyDown}
                 aria-label="Show the next chapter of the story"
-                className="relative block aspect-square w-[min(78vw,280px)] overflow-hidden rounded-[1.7rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy lg:w-[300px]"
+                className={`relative block aspect-square overflow-hidden rounded-[1.7rem] transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy motion-reduce:transition-none ${
+                  reading
+                    ? "w-[min(46vw,168px)] lg:w-[172px]"
+                    : "w-[min(78vw,280px)] lg:w-[300px]"
+                }`}
               >
                 <span key={active ?? "cover"} className="absolute inset-0 motion-safe:animate-photo-in">
                   <Image
@@ -140,21 +153,38 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-full max-w-xl">
-          <h1 className="font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            I&apos;m Ben.
-          </h1>
-          <p className="mt-3 font-serif text-2xl font-medium text-muted italic sm:text-3xl lg:text-4xl">
-            Here&apos;s my story.
-          </p>
-          <div className="mt-6">
+        <div className={`w-full ${reading ? "max-w-2xl" : "max-w-xl"}`}>
+          <div
+            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              reading ? "grid-rows-[0fr] opacity-0" : "grid-rows-[1fr] opacity-100"
+            }`}
+            inert={reading}
+          >
+            <div className="overflow-hidden">
+              <h1 className="font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+                I&apos;m Ben.
+              </h1>
+              <p className="mt-3 font-serif text-2xl font-medium text-muted italic sm:text-3xl lg:text-4xl">
+                Here&apos;s my story.
+              </p>
+            </div>
+          </div>
+          <div
+            className={`transition-[margin] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              reading ? "mt-0" : "mt-6"
+            }`}
+          >
             <PlaceholderMark />
             <p
               id="hero-story"
               role="tabpanel"
               aria-live="polite"
               aria-atomic="true"
-              className="mt-3 text-[1.05rem] leading-relaxed text-ink"
+              className={`text-ink transition-[font-size,line-height,margin] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+                reading
+                  ? "mt-3 font-serif text-[1.7rem] leading-snug font-medium sm:text-[2rem] lg:text-[2.35rem]"
+                  : "mt-3 text-[1.05rem] leading-relaxed"
+              }`}
             >
               <span className="sr-only">{spoken} </span>
               {story}
