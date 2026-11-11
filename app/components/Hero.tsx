@@ -43,19 +43,20 @@ export default function Hero() {
         </div>
 
         <div className="order-1 w-full max-w-xl">
-          {/* PLACEHOLDER / TODO: Ben to sign off this opening. It leads with the reader, then who he is. Draft arrangement of existing lines. */}
+          {/* PLACEHOLDER / TODO: Ben to sign off this opening. Draft from his description of himself: a problem solver who asks like a journalist, never takes the first no, and has gone from distressed-company restructuring, to smaller-business transformation, to a two billion dollar BCG transformation, to what BCG sells in AI. He said "journalist"; confirm he means the way he asks, not a job title. */}
           <PlaceholderMark />
           <p className="mt-3 text-[1.05rem] leading-relaxed text-ink">
-            Things can look fine from the outside and still not feel fine. You don&apos;t need
-            someone to tell you what to do with your life. You need a better question, and a first
-            step you&apos;ll actually take.
+            I&apos;ve sat with lenders and creditors when a company was running out of money.
+            I&apos;ve worked on the transformation of smaller businesses. At BCG I worked on the
+            transformation of a two-billion-dollar company.
           </p>
           <h1 className="mt-8 font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
           <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
-            I coach people who feel stuck. I know the feeling. These days I also work on how BCG
-            sells AI.
+            I come at the problem from a different point of view. I keep asking, and I don&apos;t
+            take the first no. These days that question is what BCG should sell in AI, and how to
+            sell it.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a

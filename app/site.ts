@@ -45,7 +45,7 @@ export const headingClass =
 export const seo = {
   title: "Benjamin Oh | AI go-to-market at BCG, and a career coach",
   description:
-    "I'm Ben. I coach people who feel stuck, and I work on how BCG sells AI. Book a chat, or read the longer background.",
+    "I'm Ben. I work on what BCG should sell in AI, and how to sell it. Book a chat, or read the longer background.",
   url: "https://benjaminoh.com/",
 } as const;
 
