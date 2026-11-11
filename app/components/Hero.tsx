@@ -153,7 +153,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={`w-full ${reading ? "max-w-2xl" : "max-w-xl"}`}>
+        <div className="w-full max-w-xl">
           <div
             className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
               reading ? "grid-rows-[0fr] opacity-0" : "grid-rows-[1fr] opacity-100"
@@ -170,21 +170,26 @@ export default function Hero() {
             </div>
           </div>
           <div
-            className={`transition-[margin] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-              reading ? "mt-0" : "mt-6"
+            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              reading ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
             }`}
+            inert={!reading}
           >
-            <PlaceholderMark />
+            <div className="overflow-hidden">
+              <PlaceholderMark />
+              <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+                {chapter?.label}
+              </h2>
+            </div>
+          </div>
+          <div className={reading ? "mt-4" : "mt-6"}>
+            {reading ? null : <PlaceholderMark />}
             <p
               id="hero-story"
               role="tabpanel"
               aria-live="polite"
               aria-atomic="true"
-              className={`text-ink transition-[font-size,line-height,margin] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-                reading
-                  ? "mt-3 font-serif text-[1.7rem] leading-snug font-medium sm:text-[2rem] lg:text-[2.35rem]"
-                  : "mt-3 text-[1.05rem] leading-relaxed"
-              }`}
+              className="mt-3 text-[1.05rem] leading-relaxed text-ink"
             >
               <span className="sr-only">{spoken} </span>
               {story}
