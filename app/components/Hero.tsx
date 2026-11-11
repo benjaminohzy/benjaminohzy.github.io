@@ -54,7 +54,10 @@ export default function Hero() {
           <h1 className="mt-8 font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
-          <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
+          <p className="mt-5 font-serif text-xl leading-snug text-ink sm:text-2xl">
+            Built on resilience, driven by curiosity.
+          </p>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
             Right now I work on what to sell in AI, how to sell it, and how to drive adoption.
             Enablement, GTM, and commercialisation.
           </p>
