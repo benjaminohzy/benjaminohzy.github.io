@@ -1,10 +1,9 @@
-const section =
-  "reveal mx-auto w-full max-w-6xl scroll-mt-24 border-t border-navy/10 px-6 py-20 sm:px-8 sm:py-28";
+import { headingClass, sectionClass } from "../site";
 
 export default function AiWork() {
   return (
-    <section id="ai-work" className={section}>
-      <h2 className="font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">
+    <section id="ai-work" className={sectionClass}>
+      <h2 className={headingClass}>
         The GPT I gave up on
       </h2>
       <div className="mt-8 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
@@ -31,7 +30,7 @@ export default function AiWork() {
             the same spreadsheet and asked the same questions. It got about 95% right. I hadn&apos;t
             changed a thing.
           </p>
-          <p className="mt-2 text-right font-hand text-3xl text-navy -rotate-2">
+          <p className="mt-2 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
             it worked the second time
           </p>
         </div>

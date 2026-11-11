@@ -1,13 +1,10 @@
-import { BOOK_A_CHAT_URL, primaryButtonClass } from "../site";
+import { BOOK_A_CHAT_URL, headingClass, primaryButtonClass, sectionClass } from "../site";
 import { PlaceholderMark } from "./Placeholder";
-
-const section =
-  "reveal mx-auto w-full max-w-6xl scroll-mt-24 border-t border-navy/10 px-6 py-20 sm:px-8 sm:py-28";
 
 export default function Coaching() {
   return (
-    <section id="coaching" className={section}>
-      <h2 className="font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">
+    <section id="coaching" className={sectionClass}>
+      <h2 className={headingClass}>
         Coaching
       </h2>
       <div className="mt-8 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
@@ -70,7 +67,7 @@ export default function Coaching() {
           href={BOOK_A_CHAT_URL}
           target="_blank"
           rel="noreferrer"
-          className={`${primaryButtonClass} mt-6`}
+          className={`${primaryButtonClass} mt-6 w-full sm:w-auto`}
         >
           Book a chat
         </a>

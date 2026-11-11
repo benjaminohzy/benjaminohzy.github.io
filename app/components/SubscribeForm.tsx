@@ -27,9 +27,9 @@ export default function SubscribeForm() {
           required
           autoComplete="email"
           placeholder="you@example.com"
-          className="w-full rounded-full border border-navy/20 bg-cream px-4 py-2.5 text-sm text-ink placeholder:text-muted focus:border-navy focus:outline-none sm:max-w-xs"
+          className="min-h-11 w-full rounded-full border border-navy/20 bg-cream px-4 py-2.5 text-base text-ink placeholder:text-muted focus:border-navy focus:outline-none sm:max-w-xs sm:text-sm"
         />
-        <button type="submit" disabled={isPending} className={`${primaryButtonClass} disabled:opacity-60`}>
+        <button type="submit" disabled={isPending} className={`${primaryButtonClass} w-full disabled:opacity-60 sm:w-auto`}>
           {isPending ? "Sending" : "Send me the first one"}
         </button>
       </div>

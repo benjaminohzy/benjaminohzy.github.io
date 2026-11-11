@@ -19,6 +19,19 @@ body {
   color: var(--color-ink);
 }
 
+/* Keeps content clear of notches without shrinking the desktop gutters. */
+.gutter {
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 640px) {
+  .gutter {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
+
 ::selection {
   background: #b3bbe6;
   color: #1b1f32;
@@ -68,7 +81,14 @@ body {
 
   .beer-slide:hover .beer-can,
   .beer-slide:focus-within .beer-can {
-    transform: translateX(8.5rem);
+    transform: translateX(4.5rem);
+  }
+
+  @media (min-width: 640px) {
+    .beer-slide:hover .beer-can,
+    .beer-slide:focus-within .beer-can {
+      transform: translateX(8.5rem);
+    }
   }
 }
 

@@ -1,13 +1,11 @@
 import SubscribeForm from "./SubscribeForm";
 import { PlaceholderMark } from "./Placeholder";
-
-const section =
-  "reveal mx-auto w-full max-w-6xl scroll-mt-24 border-t border-navy/10 px-6 py-20 sm:px-8 sm:py-28";
+import { headingClass, sectionClass } from "../site";
 
 export default function Newsletter() {
   return (
-    <section id="newsletter" className={section}>
-      <h2 className="font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">
+    <section id="newsletter" className={sectionClass}>
+      <h2 className={headingClass}>
         Newsletter
       </h2>
       <div className="mt-8 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">

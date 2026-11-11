@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { links } from "../site";
+import { headingClass, links, sectionClass } from "../site";
 import { PlaceholderMark } from "./Placeholder";
-
-const section =
-  "reveal mx-auto w-full max-w-6xl scroll-mt-24 border-t border-navy/10 px-6 py-20 sm:px-8 sm:py-28";
 
 type Project = {
   title: string;
@@ -13,6 +10,7 @@ type Project = {
   statusPlaceholder?: boolean;
   image?: string;
   fit?: "cover" | "contain";
+  tall?: boolean;
   blurred?: boolean;
   placeholder?: boolean;
 };
@@ -24,6 +22,7 @@ const projects: Project[] = [
     body: "A set of AI agents that keep track of my bio, my AI notes, my projects and my coaching. Built in Claude Code. This site is one of the things it looks after.",
     image: "/images/personal-os-map.svg",
     fit: "contain",
+    tall: true,
   },
   {
     title: "Kith",
@@ -79,15 +78,21 @@ function ProjectMedia({ project }: { project: Project }) {
   if (!project.image) return null;
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-2xl bg-lavender/25">
+    <div
+      className={
+        project.tall
+          ? "relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-lavender/25"
+          : "relative aspect-video overflow-hidden rounded-2xl bg-lavender/25"
+      }
+    >
       <Image
         src={project.image}
         alt=""
         fill
-        sizes="(min-width: 768px) 280px, 100vw"
+        sizes="(min-width: 768px) 272px, 100vw"
         className={
           project.fit === "contain"
-            ? "object-contain p-8"
+            ? "object-contain p-3 md:p-5"
             : `object-cover object-top ${project.blurred ? "scale-105 blur-md" : ""}`
         }
       />
@@ -119,8 +124,8 @@ function ProjectCopy({ project }: { project: Project }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className={section}>
-      <h2 className="font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">
+    <section id="projects" className={sectionClass}>
+      <h2 className={headingClass}>
         Things I&apos;ve built
       </h2>
       <p className="mt-6 max-w-2xl text-[1.05rem] leading-relaxed text-ink">

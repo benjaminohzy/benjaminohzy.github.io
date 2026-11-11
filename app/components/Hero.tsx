@@ -21,7 +21,7 @@ function HiNote() {
   return (
     <p
       aria-hidden="true"
-      className="hi-draw pointer-events-none absolute top-[18%] left-0 -rotate-6 py-1 font-hand text-[2.6rem] leading-none text-navy"
+      className="hi-draw pointer-events-none absolute top-0 left-1 -rotate-6 py-1 font-hand text-[2.15rem] leading-none text-navy sm:text-[2.4rem] lg:top-[18%] lg:left-0 lg:text-[2.6rem]"
     >
       hi :)
     </p>
@@ -76,11 +76,11 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto flex w-full max-w-6xl flex-col justify-center px-6 pt-12 pb-20 sm:px-8 md:min-h-[calc(100dvh-4.5rem)] md:py-16"
+      className="gutter mx-auto flex w-full max-w-6xl flex-col justify-center pt-8 pb-14 sm:pt-12 sm:pb-20 lg:min-h-[calc(100dvh-4.5rem)] lg:py-16"
     >
-      <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
-        <div className="w-full shrink-0 md:w-auto">
-          <div className="relative mx-auto w-fit pl-16 sm:pl-20">
+      <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-16">
+        <div className="w-full shrink-0 lg:w-auto">
+          <div className="relative mx-auto w-fit pt-10 lg:pt-0 lg:pl-20">
             <HiNote />
             <div className="relative">
               <div
@@ -92,7 +92,7 @@ export default function Hero() {
                 onClick={next}
                 onKeyDown={onPhotoKeyDown}
                 aria-label="Show the next chapter of the story"
-                className="relative block aspect-square w-[min(72vw,300px)] overflow-hidden rounded-[1.7rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+                className="relative block aspect-square w-[min(78vw,280px)] overflow-hidden rounded-[1.7rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy lg:w-[300px]"
               >
                 <span key={active ?? "cover"} className="absolute inset-0 motion-safe:animate-photo-in">
                   <Image
@@ -100,14 +100,14 @@ export default function Hero() {
                     alt=""
                     fill
                     preload
-                    sizes="300px"
+                    sizes="(min-width: 1024px) 300px, 78vw"
                     className="object-cover object-[center_30%]"
                   />
                 </span>
               </button>
             </div>
             <div
-              className="mt-5 flex items-center justify-center gap-2.5"
+              className="mt-3 flex items-center justify-center"
               role="tablist"
               aria-label="Story chapters"
             >
@@ -125,10 +125,14 @@ export default function Hero() {
                     tabIndex={selected || (active === null && index === 0) ? 0 : -1}
                     onClick={() => go(index)}
                     onKeyDown={(event) => onDotKeyDown(event, index)}
-                    className={`h-2.5 w-2.5 rounded-full focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-navy ${
-                      selected ? "bg-navy" : "bg-lavender hover:bg-navy/40"
-                    }`}
-                  />
+                    className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
+                  >
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full ${
+                        selected ? "bg-navy" : "bg-lavender"
+                      }`}
+                    />
+                  </button>
                 );
               })}
             </div>
@@ -137,10 +141,10 @@ export default function Hero() {
         </div>
 
         <div className="w-full max-w-xl">
-          <h1 className="font-serif text-6xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-7xl">
+          <h1 className="font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
-          <p className="mt-3 font-serif text-3xl font-medium text-muted italic sm:text-4xl">
+          <p className="mt-3 font-serif text-2xl font-medium text-muted italic sm:text-3xl lg:text-4xl">
             Here&apos;s my story.
           </p>
           <div className="mt-6">
@@ -156,19 +160,19 @@ export default function Hero() {
               {story}
             </p>
           </div>
-          <p className="mt-8 font-serif text-[1.65rem] leading-snug font-semibold text-ink sm:text-[1.85rem]">
+          <p className="mt-8 font-serif text-[1.45rem] leading-snug font-semibold text-ink sm:text-[1.65rem] lg:text-[1.85rem]">
             None of it went the way I planned. I just kept turning up.
           </p>
           <p className="mt-6 text-[1.05rem] leading-relaxed text-ink">
             These days I work on how BCG sells AI, and I coach people who feel stuck. I know the
             feeling.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href={BOOK_A_CHAT_URL}
               target="_blank"
               rel="noreferrer"
-              className={primaryButtonClass}
+              className={`${primaryButtonClass} w-full sm:w-auto`}
             >
               Book a chat
             </a>
@@ -176,7 +180,7 @@ export default function Hero() {
               href={links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className={secondaryButtonClass}
+              className={`${secondaryButtonClass} w-full sm:w-auto`}
             >
               LinkedIn
             </a>

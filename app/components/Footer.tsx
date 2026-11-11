@@ -15,7 +15,7 @@ function BeerCan() {
 
 export default function Footer() {
   return (
-    <footer className="mx-auto w-full max-w-6xl px-6 pt-4 pb-16 sm:px-8">
+    <footer className="gutter mx-auto w-full max-w-6xl pt-4 pb-[max(4rem,env(safe-area-inset-bottom))]">
       <div className="border-t border-navy/10 pt-12">
         <h2 className="font-serif text-3xl font-medium text-ink">Say hi</h2>
         {/* PLACEHOLDER / TODO: Ben to confirm he is happy with "eventually". Cut it if not. */}
@@ -25,9 +25,9 @@ export default function Footer() {
             Email is best. LinkedIn works too. I reply to everyone, eventually.
           </p>
         </div>
-        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 text-sm">
           <li>
-            <a href={links.email} className="underline decoration-lavender underline-offset-4 hover:decoration-navy">
+            <a href={links.email} className="inline-flex min-h-11 items-center underline decoration-lavender underline-offset-4 hover:decoration-navy">
               Email
             </a>
           </li>
@@ -36,7 +36,7 @@ export default function Footer() {
               href={links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+              className="inline-flex min-h-11 items-center underline decoration-lavender underline-offset-4 hover:decoration-navy"
             >
               LinkedIn
             </a>
@@ -46,7 +46,7 @@ export default function Footer() {
               href={links.coaching}
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+              className="inline-flex min-h-11 items-center underline decoration-lavender underline-offset-4 hover:decoration-navy"
             >
               Coaching site
             </a>
@@ -56,7 +56,7 @@ export default function Footer() {
               href={links.credly}
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+              className="inline-flex min-h-11 items-center underline decoration-lavender underline-offset-4 hover:decoration-navy"
             >
               Credly
             </a>
@@ -65,7 +65,7 @@ export default function Footer() {
 
         <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted" aria-label="Sections">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-ink">
+            <a key={link.href} href={link.href} className="inline-flex min-h-11 items-center hover:text-ink">
               {link.label}
             </a>
           ))}

@@ -14,7 +14,7 @@ export default function Nav() {
       >
         Skip to story
       </a>
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
+      <div className="gutter mx-auto flex max-w-6xl items-center justify-between gap-4 py-3 sm:py-4">
         <a href="#top" className="font-serif text-lg text-ink" onClick={() => setOpen(false)}>
           Benjamin Oh
         </a>
@@ -41,7 +41,7 @@ export default function Nav() {
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-navy/20 lg:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-navy/20 lg:hidden"
         >
           <span
             className={`block h-px w-4 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
@@ -52,11 +52,14 @@ export default function Nav() {
         </button>
       </div>
       {open ? (
-        <nav className="border-t border-navy/10 px-6 py-4 sm:px-8 lg:hidden" aria-label="Sections">
-          <ul className="flex flex-col gap-1 text-base text-ink">
+        <nav
+          className="gutter max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-navy/10 py-3 lg:hidden"
+          aria-label="Sections"
+        >
+          <ul className="flex flex-col text-base text-ink">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setOpen(false)} className="block py-2">
+                <a href={link.href} onClick={() => setOpen(false)} className="block py-3">
                   {link.label}
                 </a>
               </li>
@@ -67,13 +70,13 @@ export default function Nav() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setOpen(false)}
-                className="block py-2"
+                className="block py-3"
               >
                 Coaching site
               </a>
             </li>
-            <li className="pt-2">
-              <a href={links.email} onClick={() => setOpen(false)} className={primaryButtonClass}>
+            <li className="pt-2 pb-2">
+              <a href={links.email} onClick={() => setOpen(false)} className={`${primaryButtonClass} w-full`}>
                 Get in touch
               </a>
             </li>
