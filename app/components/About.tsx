@@ -2,23 +2,103 @@ import Image from "next/image";
 import { headingClass, links, sectionClass } from "../site";
 import { PlaceholderMark } from "./Placeholder";
 
+const sectionHeading = "mt-12 font-serif text-2xl font-medium tracking-tight text-ink sm:text-3xl";
+
 export default function About() {
   return (
-    <section id="about" className={sectionClass}>
-      <h2 className={headingClass}>
-        How I got here
-      </h2>
-      <div className="mt-8 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
-        <p>
-          I&apos;m the eldest of three, and I trained in finance and accounting. That&apos;s not a
-          very exciting start, but it got me my first job.
+    <section id="background" className={sectionClass}>
+      <h2 className={headingClass}>Background</h2>
+      <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink">
+        I&apos;m Ben. I work on how BCG sells AI, and I coach people who feel stuck. The longer
+        version is below.
+      </p>
+
+      <div className="mt-4 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
+        {/* PLACEHOLDER / TODO: Ben to refine the early-life wording. Split from the draft hero paragraph. */}
+        <div className="space-y-2">
+          <h3 className={sectionHeading}>Singapore</h3>
+          <PlaceholderMark />
+          <p>
+            I grew up in Singapore in a family that didn&apos;t have much. My parents worked seven
+            days a week. I&apos;m the eldest of three, and I trained in finance and accounting.
+            That&apos;s not a very exciting start, but it got me my first job. I repeated a year of
+            junior college because my grades weren&apos;t good enough.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className={sectionHeading}>2015 SEA Games</h3>
+          <PlaceholderMark />
+          <p>
+            In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan
+            anyway, and made it back. We won bronze with my whole family in the stands. Then
+            average uni results and a lot of rejection emails.
+          </p>
+        </div>
+      </div>
+
+      <figure className="mt-8 max-w-xl">
+        <div className="relative aspect-video overflow-hidden rounded-2xl">
+          <Image
+            src="/images/seagames.jpg"
+            alt="Singapore men's softball team at the 2015 SEA Games"
+            fill
+            sizes="(min-width: 640px) 576px, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <p className="mt-3 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
+          got cut, then made it back
         </p>
+        {/* TODO: Ben still to confirm the match report and roster links. */}
+        <figcaption className="mt-2 text-sm leading-relaxed text-muted">
+          Singapore men&apos;s softball, 2015 SEA Games. Bronze. (
+          <a
+            href={links.seaGamesReport}
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+          >
+            match report
+          </a>
+          {" · "}
+          <a
+            href={links.seaGamesRoster}
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+          >
+            roster
+          </a>
+          )
+        </figcaption>
+      </figure>
+
+      <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
+        <h3 className={sectionHeading}>Sierra Leone</h3>
         <p>
           That job was in restructuring at Borrelli Walsh. For three years I worked on companies
           that were in trouble across Southeast Asia, and once on site in Sierra Leone. When a
           company is running out of money, nobody wants a slide deck. They want to know what
           happens on Monday. I learned more there than in all of uni.
         </p>
+      </div>
+
+      <figure className="mt-8 max-w-xl">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <Image
+            src="/images/sierra-leone-1.jpg"
+            alt="Benjamin Oh on site in Sierra Leone in 2019"
+            fill
+            sizes="(min-width: 640px) 576px, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <figcaption className="mt-3 text-sm text-muted">On site in Sierra Leone, 2019.</figcaption>
+      </figure>
+
+      <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
+        <h3 className={sectionHeading}>Since then</h3>
         {/* PLACEHOLDER / TODO: Ben to add one line on what the portfolio business was, or confirm this stays vague. */}
         <div className="space-y-2">
           <PlaceholderMark />
@@ -57,57 +137,10 @@ export default function About() {
           </a>
           , if you&apos;re the type who checks.
         </p>
-      </div>
-
-      <figure className="mt-12 max-w-xl">
-        <div className="relative aspect-video overflow-hidden rounded-2xl">
-          <Image
-            src="/images/seagames.jpg"
-            alt="Singapore men's softball team at the 2015 SEA Games"
-            fill
-            sizes="(min-width: 640px) 576px, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <p className="mt-3 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
-          got cut, then made it back
+        <p className="font-serif text-[1.45rem] leading-snug font-semibold text-ink sm:text-[1.65rem]">
+          None of it went the way I planned. I just kept turning up.
         </p>
-        {/* TODO: Ben still to confirm the match report and roster links. */}
-        <figcaption className="mt-2 text-sm leading-relaxed text-muted">
-          Singapore men&apos;s softball, 2015 SEA Games. Bronze. (
-          <a
-            href={links.seaGamesReport}
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
-          >
-            match report
-          </a>
-          {" · "}
-          <a
-            href={links.seaGamesRoster}
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
-          >
-            roster
-          </a>
-          )
-        </figcaption>
-      </figure>
-
-      <figure className="mt-10 max-w-xl">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-          <Image
-            src="/images/sierra-leone-1.jpg"
-            alt="Benjamin Oh on site in Sierra Leone in 2019"
-            fill
-            sizes="(min-width: 640px) 576px, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <figcaption className="mt-3 text-sm text-muted">On site in Sierra Leone, 2019.</figcaption>
-      </figure>
+      </div>
     </section>
   );
 }

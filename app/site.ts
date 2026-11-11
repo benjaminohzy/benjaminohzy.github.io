@@ -22,7 +22,7 @@ export const links = {
 } as const;
 
 export const navLinks = [
-  { href: "#about", label: "About" },
+  { href: "#background", label: "Background" },
   { href: "#ai-work", label: "AI work" },
   { href: "#projects", label: "Projects" },
   { href: "#coaching", label: "Coaching" },
@@ -45,42 +45,9 @@ export const headingClass =
 export const seo = {
   title: "Benjamin Oh | AI go-to-market at BCG, and a career coach",
   description:
-    "I'm Ben. I work on how BCG sells AI and coach people who feel stuck. Here's my story, what I've built with AI, and how to book a chat.",
+    "I'm Ben. I coach people who feel stuck, and I work on how BCG sells AI. Book a chat, or read the longer background.",
   url: "https://benjaminoh.com/",
 } as const;
-
-/**
- * Approved hero paragraph (version A). Shown until a chapter is chosen.
- * PLACEHOLDER: Ben to refine this before launch. Draft wording only.
- */
-export const heroStory =
-  "I grew up in Singapore in a family that didn't have much. My parents worked seven days a week. I repeated a year of junior college because my grades weren't good enough. In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan anyway, and made it back. We won bronze with my whole family in the stands. Then average uni results and a lot of rejection emails.";
-
-/** Portrait on the cover, before a chapter is chosen. */
-export const coverPhoto = "/images/headshot.jpg";
-
-/**
- * Click order follows the photos already on the page: the cover headshot,
- * then the SEA Games photo in About, then the Sierra Leone photo in About.
- * `label` is the section header. `text` is existing copy, not new facts.
- * `focus` is the crop for the square frame.
- */
-export const storyChapters = [
-  {
-    id: "seagames",
-    label: "How I got here",
-    photo: "/images/seagames.jpg",
-    focus: "object-center",
-    text: "In 2015 I got cut from the SEA Games softball squad, went to a training camp in Japan anyway, and made it back. We won bronze with my whole family in the stands.",
-  },
-  {
-    id: "sierra-leone",
-    label: "Sierra Leone",
-    photo: "/images/sierra-leone-1.jpg",
-    focus: "object-left",
-    text: "That job was in restructuring at Borrelli Walsh. For three years I worked on companies that were in trouble across Southeast Asia, and once on site in Sierra Leone.",
-  },
-] as const;
 
 // TODO: Ben still to confirm the job title wording ("AI Senior Offer Manager").
 // TODO: Ben still to confirm the two SEA Games sources at the end of sameAs.
