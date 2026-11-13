@@ -1,9 +1,10 @@
 import Nav from "./components/Nav";
-import Bio from "./components/Bio";
-import Innings from "./components/Innings";
-import BattingCage from "./components/BattingCage";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import AiWork from "./components/AiWork";
+import Projects from "./components/Projects";
 import Coaching from "./components/Coaching";
-import Dugout from "./components/Dugout";
+import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -11,11 +12,12 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <Bio />
-        <Innings />
-        <BattingCage />
+        <Hero />
+        <About />
+        <AiWork />
+        <Projects />
         <Coaching />
-        <Dugout />
+        <Newsletter />
       </main>
       <Footer />
     </>
