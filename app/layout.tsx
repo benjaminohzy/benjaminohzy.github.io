@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Caveat, DM_Sans, Fraunces } from "next/font/google";
+import { Barlow_Condensed, Caveat, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { personJsonLd, seo } from "./site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  weight: ["500", "600", "700"],
+  variable: "--font-barlow-condensed",
   display: "swap",
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${caveat.variable}`}>
+    <html lang="en" className={`${barlowCondensed.variable} ${dmSans.variable} ${caveat.variable}`}>
       <body className="bg-cream font-sans text-ink antialiased">
         <script
           type="application/ld+json"

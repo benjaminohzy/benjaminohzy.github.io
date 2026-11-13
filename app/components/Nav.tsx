@@ -7,15 +7,15 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-navy/10 bg-cream/90 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b border-ink/10 bg-cream/90 backdrop-blur-md">
       <a
         href="#top"
-        className="sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:inline-flex focus:h-auto focus:w-auto focus:overflow-visible focus:rounded-full focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:text-cream focus:[clip:auto]"
+        className="sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:inline-flex focus:h-auto focus:w-auto focus:overflow-visible focus:rounded-[3px] focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-cream focus:[clip:auto]"
       >
         Skip to story
       </a>
       <div className="gutter mx-auto flex max-w-6xl items-center justify-between gap-4 py-3 sm:py-4">
-        <a href="#top" className="font-serif text-lg text-ink" onClick={() => setOpen(false)}>
+        <a href="#top" className="font-score text-xl font-semibold tracking-wide text-ink uppercase" onClick={() => setOpen(false)}>
           Benjamin Oh
         </a>
         <nav className="hidden items-center gap-x-5 text-sm text-muted lg:flex" aria-label="Sections">
@@ -41,7 +41,7 @@ export default function Nav() {
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-navy/20 lg:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-[3px] border border-ink/20 lg:hidden"
         >
           <span
             className={`block h-px w-4 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
@@ -53,7 +53,7 @@ export default function Nav() {
       </div>
       {open ? (
         <nav
-          className="gutter max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-navy/10 py-3 lg:hidden"
+          className="gutter max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-ink/10 py-3 lg:hidden"
           aria-label="Sections"
         >
           <ul className="flex flex-col text-base text-ink">

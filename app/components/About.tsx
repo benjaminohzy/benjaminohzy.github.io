@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { headingClass, links, sectionClass } from "../site";
 
-const sectionHeading = "mt-12 font-serif text-2xl font-medium tracking-tight text-ink sm:text-3xl";
+const sectionHeading = "mt-12 font-score text-2xl font-semibold tracking-wide text-field uppercase sm:text-3xl";
 
 export default function About() {
   return (
@@ -32,8 +32,8 @@ export default function About() {
         </div>
       </div>
 
-      <figure className="mt-8 max-w-xl">
-        <div className="relative aspect-video overflow-hidden rounded-2xl">
+      <figure className="mt-10 max-w-xl">
+        <div className="relative aspect-video -rotate-1 overflow-hidden rounded-[4px] border-[6px] border-white shadow-[0_10px_30px_-12px_rgb(27_25_22/0.45)]">
           <Image
             src="/images/seagames.jpg"
             alt="Singapore men's softball team at the 2015 SEA Games"
@@ -42,7 +42,7 @@ export default function About() {
             className="object-cover"
           />
         </div>
-        <p className="mt-3 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
+        <p className="mt-3 text-right font-hand text-2xl text-sg-red -rotate-2 sm:text-3xl">
           got cut, then made it back
         </p>
         <figcaption className="mt-2 text-sm leading-relaxed text-muted">
@@ -51,7 +51,7 @@ export default function About() {
             href={links.seaGamesReport}
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+            className="underline decoration-clay underline-offset-4 hover:decoration-ink"
           >
             match report
           </a>
@@ -60,7 +60,7 @@ export default function About() {
             href={links.seaGamesRoster}
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-lavender underline-offset-4 hover:decoration-navy"
+            className="underline decoration-clay underline-offset-4 hover:decoration-ink"
           >
             roster
           </a>
@@ -88,8 +88,8 @@ export default function About() {
         </p>
       </div>
 
-      <figure className="mt-8 max-w-xl">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <figure className="mt-10 max-w-xl">
+        <div className="relative aspect-[4/3] rotate-1 overflow-hidden rounded-[4px] border-[6px] border-white shadow-[0_10px_30px_-12px_rgb(27_25_22/0.45)]">
           <Image
             src="/images/sierra-leone-1.jpg"
             alt="Benjamin Oh on site in Sierra Leone in 2019"
@@ -137,13 +137,13 @@ export default function About() {
             href={links.credly}
             target="_blank"
             rel="noreferrer"
-            className="text-navy underline decoration-lavender underline-offset-4 hover:decoration-navy"
+            className="text-ink underline decoration-clay underline-offset-4 hover:decoration-ink"
           >
             Credly
           </a>
           , if you&apos;re the type who checks.
         </p>
-        <p className="font-serif text-[1.45rem] leading-snug font-semibold text-ink sm:text-[1.65rem]">
+        <p className="font-score text-[1.6rem] leading-snug font-semibold text-ink sm:text-[1.65rem]">
           None of it went the way I planned. I just kept turning up.
         </p>
       </div>

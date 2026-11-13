@@ -30,16 +30,16 @@ export const navLinks = [
 ] as const;
 
 export const primaryButtonClass =
-  "inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-5 py-2.5 text-sm text-cream transition-colors duration-200 hover:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy";
+  "inline-flex min-h-11 items-center justify-center rounded-[3px] bg-ink px-5 py-2.5 font-score text-base font-semibold tracking-wider text-cream uppercase transition-colors duration-200 hover:bg-sg-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 export const secondaryButtonClass =
-  "inline-flex min-h-11 items-center justify-center rounded-full border border-navy/25 bg-cream px-5 py-2.5 text-sm text-navy transition-colors duration-200 hover:border-navy hover:bg-lavender/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy";
+  "inline-flex min-h-11 items-center justify-center rounded-[3px] border border-ink bg-cream px-5 py-2.5 font-score text-base font-semibold tracking-wider text-ink uppercase transition-colors duration-200 hover:border-sg-red hover:text-sg-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 export const sectionClass =
-  "reveal gutter mx-auto w-full max-w-6xl scroll-mt-24 border-t border-navy/10 py-14 sm:py-20 lg:py-28";
+  "reveal gutter mx-auto w-full max-w-6xl scroll-mt-24 border-t border-ink/10 py-14 sm:py-20 lg:py-28";
 
 export const headingClass =
-  "font-serif text-3xl font-medium tracking-tight text-ink sm:text-4xl lg:text-5xl";
+  "font-score text-4xl leading-none font-bold text-ink uppercase sm:text-5xl lg:text-6xl";
 
 // BCG is named on purpose. Approved for this redesign.
 export const seo = {

@@ -1,4 +1,5 @@
 import { headingClass, sectionClass } from "../site";
+import Scoreboard from "./Scoreboard";
 
 export default function AiWork() {
   return (
@@ -30,7 +31,14 @@ export default function AiWork() {
             the same spreadsheet and asked the same questions. It got about 95% right. I hadn&apos;t
             changed a thing.
           </p>
-          <p className="mt-2 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
+          <Scoreboard
+            stats={[
+              { number: "80%", label: "Early 2025" },
+              { number: "95%", label: "Mid 2025" },
+            ]}
+            caption="Same GPT, same spreadsheet, same questions"
+          />
+          <p className="mt-3 text-right font-hand text-2xl text-sg-red -rotate-2 sm:text-3xl">
             it worked the second time
           </p>
         </div>
