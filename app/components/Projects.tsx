@@ -74,8 +74,8 @@ function ProjectMedia({ project }: { project: Project }) {
     <div
       className={
         project.tall
-          ? "relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-lavender/25"
-          : "relative aspect-video overflow-hidden rounded-2xl bg-lavender/25"
+          ? "relative aspect-[3/4] w-full overflow-hidden rounded-[4px] bg-field/10"
+          : "relative aspect-video overflow-hidden rounded-[4px] bg-field/10"
       }
     >
       <Image
@@ -97,8 +97,8 @@ function ProjectCopy({ project }: { project: Project }) {
   return (
     <div>
       <h3
-        className={`font-serif text-2xl text-ink ${
-          project.href ? "group-hover:underline group-hover:decoration-lavender group-hover:underline-offset-4" : ""
+        className={`font-score text-2xl font-semibold tracking-wide text-ink uppercase ${
+          project.href ? "group-hover:underline group-hover:decoration-clay group-hover:underline-offset-4" : ""
         }`}
       >
         {project.title}
@@ -128,8 +128,8 @@ export default function Projects() {
             </>
           );
           const className = project.image
-            ? "grid gap-6 border-t border-navy/10 py-8 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] md:items-center"
-            : "grid gap-6 border-t border-navy/10 py-8";
+            ? "grid gap-6 border-t border-ink/10 py-8 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] md:items-center"
+            : "grid gap-6 border-t border-ink/10 py-8";
 
           if (project.href) {
             return (

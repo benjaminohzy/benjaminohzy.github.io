@@ -1,4 +1,4 @@
-import { BOOK_A_CHAT_URL, headingClass, primaryButtonClass, sectionClass } from "../site";
+import { BOOK_A_CHAT_URL, headingClass, sectionClass } from "../site";
 
 export default function Coaching() {
   return (
@@ -16,7 +16,7 @@ export default function Coaching() {
 
       <div className="mt-12 max-w-2xl space-y-8 text-[1.05rem] leading-relaxed text-ink">
         <div>
-          <h3 className="font-serif text-2xl text-ink">Who it&apos;s for</h3>
+          <h3 className="font-score text-2xl font-semibold tracking-wide text-field uppercase">Who it&apos;s for</h3>
           <p className="mt-3">
             People who feel stuck. Maybe you&apos;re thinking about a career change, or a move, or
             you&apos;ve just got a new role and you&apos;re not sure how to show up in it. Maybe
@@ -25,7 +25,7 @@ export default function Coaching() {
           </p>
         </div>
         <div>
-          <h3 className="font-serif text-2xl text-ink">What I do</h3>
+          <h3 className="font-score text-2xl font-semibold tracking-wide text-field uppercase">What I do</h3>
           <p className="mt-3">
             I listen and I ask questions. You do most of the talking and all of the deciding.
             I&apos;ll help you get clear on what you want and what&apos;s in the way, then we work
@@ -33,7 +33,7 @@ export default function Coaching() {
           </p>
         </div>
         <div>
-          <h3 className="font-serif text-2xl text-ink">What I don&apos;t do</h3>
+          <h3 className="font-score text-2xl font-semibold tracking-wide text-field uppercase">What I don&apos;t do</h3>
           <p className="mt-3">
             I don&apos;t give advice or tell you what to do with your life. I&apos;m not a
             therapist either, and I won&apos;t rewrite your CV.
@@ -45,8 +45,8 @@ export default function Coaching() {
         I&apos;m ICF-accredited (Associate Certified Coach, 2025).
       </p>
 
-      <div className="mt-10 max-w-3xl rounded-3xl bg-lavender/45 px-6 py-8 sm:px-10 sm:py-10">
-        <p className="max-w-2xl font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
+      <div className="mt-10 max-w-3xl rounded-[4px] bg-field px-6 py-8 sm:px-10 sm:py-10">
+        <p className="max-w-2xl font-score text-2xl leading-snug font-semibold text-cream sm:text-[1.9rem]">
           If something&apos;s been on your mind for months and you still haven&apos;t said it out
           loud, book a chat. Worst case, you get to think out loud with someone who has no stake
           in what you decide.
@@ -55,7 +55,7 @@ export default function Coaching() {
           href={BOOK_A_CHAT_URL}
           target="_blank"
           rel="noreferrer"
-          className={`${primaryButtonClass} mt-6 w-full sm:w-auto`}
+          className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-[3px] bg-cream px-5 py-2.5 font-score text-base font-semibold tracking-wider text-ink uppercase transition-colors duration-200 hover:bg-ink hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream sm:w-auto"
         >
           Book a chat
         </a>

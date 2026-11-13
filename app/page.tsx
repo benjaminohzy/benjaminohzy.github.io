@@ -6,10 +6,12 @@ import Projects from "./components/Projects";
 import Coaching from "./components/Coaching";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
+import StitchProgress from "./components/StitchProgress";
 
 export default function Home() {
   return (
     <>
+      <StitchProgress />
       <Nav />
       <main>
         <Hero />

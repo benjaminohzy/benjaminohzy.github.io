@@ -11,7 +11,7 @@ export default function SubscribeForm() {
   );
 
   if (state?.ok) {
-    return <p className="mt-8 font-serif text-2xl text-ink">You&apos;re in. See you in the first one.</p>;
+    return <p className="mt-8 font-score text-2xl font-semibold text-ink">You&apos;re in. See you in the first one.</p>;
   }
 
   return (
@@ -27,13 +27,13 @@ export default function SubscribeForm() {
           required
           autoComplete="email"
           placeholder="you@example.com"
-          className="min-h-11 w-full rounded-full border border-navy/20 bg-cream px-4 py-2.5 text-base text-ink placeholder:text-muted focus:border-navy focus:outline-none sm:max-w-xs sm:text-sm"
+          className="min-h-11 w-full rounded-[3px] border border-ink/20 bg-cream px-4 py-2.5 text-base text-ink placeholder:text-muted focus:border-ink focus:outline-none sm:max-w-xs sm:text-sm"
         />
         <button type="submit" disabled={isPending} className={`${primaryButtonClass} w-full disabled:opacity-60 sm:w-auto`}>
           {isPending ? "Sending" : "Send me the first one"}
         </button>
       </div>
-      {state && !state.ok ? <p className="mt-3 text-sm text-navy">{state.error}</p> : null}
+      {state && !state.ok ? <p className="mt-3 text-sm text-ink">{state.error}</p> : null}
     </form>
   );
 }
