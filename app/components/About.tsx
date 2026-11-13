@@ -9,8 +9,8 @@ export default function About() {
     <section id="background" className={sectionClass}>
       <h2 className={headingClass}>Background</h2>
       <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink">
-        I&apos;m Ben. This is how I got here, and what I can bring to a team. I also coach people
-        who feel stuck.
+        I&apos;m Ben. This is how I got here. I like starting from a real problem and building
+        something small that works. I also coach people who feel stuck.
       </p>
 
       <div className="mt-4 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
