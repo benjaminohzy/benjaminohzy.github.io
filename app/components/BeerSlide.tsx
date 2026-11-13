@@ -106,9 +106,11 @@ export default function BeerSlide() {
         </span>
         <span
           role="status"
-          className={`tabular-nums transition-colors duration-300 ${landed ? "text-2xl font-bold text-sg-red" : "text-xs"}`}
+          className={`tabular-nums transition-colors duration-300 ${
+            landed ? "text-2xl font-bold text-sg-red" : moving ? "text-2xl font-bold text-ink" : "text-xs"
+          }`}
         >
-          {landed ? `${RECORD_METERS} meters` : `${meters.toFixed(2)} m`}
+          {moving || landed ? `${meters.toFixed(2)} meters` : "0.00 m"}
         </span>
       </div>
     </div>
