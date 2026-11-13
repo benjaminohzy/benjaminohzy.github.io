@@ -1,18 +1,15 @@
 import Image from "next/image";
 import { headingClass, links, sectionClass } from "../site";
-import { PlaceholderMark } from "./Placeholder";
 
 type Project = {
   title: string;
   body: string;
   href?: string;
   status?: string;
-  statusPlaceholder?: boolean;
   image?: string;
   fit?: "cover" | "contain";
   tall?: boolean;
   blurred?: boolean;
-  placeholder?: boolean;
 };
 
 const projects: Project[] = [
@@ -27,9 +24,7 @@ const projects: Project[] = [
   {
     title: "Kith",
     href: links.kith,
-    // PLACEHOLDER / TODO: Ben to confirm whether this status says "in progress", or whether Kith is live for anyone to sign up.
     status: "In progress",
-    statusPlaceholder: true,
     body: "An app for keeping in touch with the people who matter. You keep notes on each person, log your chats with help from AI, and get a quick prep sheet before you meet. Each relationship lives in a room of a house, depending on how close you are.",
     image: "/images/kith-screenshot.jpeg",
   },
@@ -54,10 +49,8 @@ const projects: Project[] = [
     image: "/images/bencoachme-screenshot.png",
   },
   {
-    // PLACEHOLDER / TODO: Ben to confirm this coachee card stays, and to replace the wording if he wants it tighter.
     title: "coachee",
     href: links.coachee,
-    placeholder: true,
     body: "My ICF coaching session log. Session prep, reminders, hour tracking, and calendar invites. Built for me for now, and for friends later.",
   },
   {
@@ -103,20 +96,14 @@ function ProjectMedia({ project }: { project: Project }) {
 function ProjectCopy({ project }: { project: Project }) {
   return (
     <div>
-      {project.placeholder ? <PlaceholderMark /> : null}
       <h3
-        className={`font-serif text-2xl text-ink ${project.placeholder ? "mt-3" : ""} ${
+        className={`font-serif text-2xl text-ink ${
           project.href ? "group-hover:underline group-hover:decoration-lavender group-hover:underline-offset-4" : ""
         }`}
       >
         {project.title}
       </h3>
-      {project.status ? (
-        <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted">
-          {project.status}
-          {project.statusPlaceholder ? <PlaceholderMark /> : null}
-        </p>
-      ) : null}
+      {project.status ? <p className="mt-1 text-sm text-muted">{project.status}</p> : null}
       <p className="mt-3 text-[1.02rem] leading-relaxed text-ink">{project.body}</p>
     </div>
   );

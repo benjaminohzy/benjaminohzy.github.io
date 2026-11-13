@@ -14,7 +14,6 @@ export default function About() {
       </p>
 
       <div className="mt-4 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
-        {/* PLACEHOLDER / TODO: Ben to refine the early-life wording. Split from the draft hero paragraph. */}
         <div className="space-y-2">
           <h3 className={sectionHeading}>Singapore</h3>
           <p>
@@ -48,7 +47,6 @@ export default function About() {
         <p className="mt-3 text-right font-hand text-2xl text-navy -rotate-2 sm:text-3xl">
           got cut, then made it back
         </p>
-        {/* TODO: Ben still to confirm the match report and roster links. */}
         <figcaption className="mt-2 text-sm leading-relaxed text-muted">
           Singapore men&apos;s softball, 2015 SEA Games. Bronze. (
           <a
@@ -73,13 +71,12 @@ export default function About() {
       </figure>
 
       <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
-        {/* PLACEHOLDER / TODO: Ben to confirm this sits after university, and that Deloitte and OCBC can be named. Order of the two episodes is his correction: applications failed, the career fair led to OCBC, and he turned down Deloitte with no other role. */}
         <h3 className={sectionHeading}>The career fair</h3>
         <p>
           I applied for every internship and got none of them. I went to the career fair anyway and
-          talked to the recruiters. One conversation became an interview at OCBC, then a summer
-          internship in banking. I also turned down a written offer from Deloitte in audit when I
-          had no other role.
+          talked to the recruiters. One conversation became an interview at a local bank, then a
+          summer internship in banking. I also turned down a written offer from a Big 4 firm in
+          audit when I had no other role.
         </p>
       </div>
 
@@ -107,42 +104,38 @@ export default function About() {
       </figure>
 
       <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
-        {/* PLACEHOLDER / TODO: Ben to confirm the Churchgate spelling, and whether this is the private-equity chapter below or a separate job. */}
-        <h3 className={sectionHeading}>Churchgate</h3>
+        <h3 className={sectionHeading}>An operator-first PE firm</h3>
         <p>
-          I left Borrelli Walsh in the middle of Covid to join Churchgate. My MD texted to ask if I
-          was sure. I&apos;d got to the end of what I was going to learn there, so I went.
+          I left Borrelli Walsh in the middle of Covid to join an operator-first PE firm. My MD
+          texted to ask if I was sure. I&apos;d got to the end of what I was going to learn there,
+          so I went.
         </p>
       </div>
 
       <div className="mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
         <h3 className={sectionHeading}>Since then</h3>
-        {/* PLACEHOLDER / TODO: Ben to add one line on what the portfolio business was, or confirm this stays vague. */}
-        <div className="space-y-2">
-          <PlaceholderMark />
-          <p>
-            Then I went into private equity as a sort of mini-CFO for a business in the portfolio.
-            Fewer people, more hats. I did the numbers, and also anything else that needed doing.
-          </p>
-        </div>
+        <p>
+          Then I went into private equity as a sort of mini-CFO for a business in the portfolio.
+          Fewer people, more hats. I did the numbers, and also anything else that needed doing.
+        </p>
         <p>In 2021 I joined BCG in Singapore, in the transformation team.</p>
-        {/* PLACEHOLDER / TODO: Ben to confirm the two-billion-dollar line, and whether the visa-sponsored role was the London move. "Vantage" is left out until he says what it refers to. */}
+        <p>
+          Part of that work was the transformation of a two-billion-dollar company. The move to
+          London was a long run of nos, from external recruiters, internal recruiters, and my own
+          manager. I kept at it. In November 2024 I moved to London.
+        </p>
+        <p>
+          From November 2024 to February 2026 I was at BCG X. I&apos;m now a Global Offer Senior
+          Manager - AI Transformations at BCG.
+        </p>
+        {/* Still waiting on Ben's final OK for this sentence. */}
         <div className="space-y-2">
           <PlaceholderMark />
           <p>
-            Part of that work was the transformation of a two-billion-dollar company. The move to
-            London was a long run of nos, from external recruiters, internal recruiters, and my own
-            manager. I kept at it until a role came with visa sponsorship. In November 2024 I moved
-            to London.
-          </p>
-        </div>
-        {/* PLACEHOLDER / TODO: Ben to confirm dates for the BCGX move and the current role, and this plain-English wording. */}
-        <div className="space-y-2">
-          <PlaceholderMark />
-          <p>
-            I spent time in portfolio strategy at BCGX, BCG&apos;s tech and build arm, and now
-            I&apos;m an AI Senior Offer Manager. In plain English: I help work out what BCG&apos;s
-            AI offers are, who they&apos;re for and how to take them to market.
+            I work where AI meets value creation. I started in finance, restructuring and private
+            equity, and now work on taking AI offers to market at BCG. I like starting from a real
+            problem a team has, not an abstract use case, then building something small that works
+            and checking whether it actually saves time or money.
           </p>
         </div>
         <p>

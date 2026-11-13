@@ -1,5 +1,4 @@
 import SubscribeForm from "./SubscribeForm";
-import { PlaceholderMark } from "./Placeholder";
 import { headingClass, sectionClass } from "../site";
 
 export default function Newsletter() {
@@ -13,11 +12,7 @@ export default function Newsletter() {
           One email a month. What I&apos;ve been building with AI, what&apos;s working, and what
           I&apos;m learning from coaching. Short enough to read with your morning coffee.
         </p>
-        {/* PLACEHOLDER / TODO: Ben to confirm the newsletter name and roughly when it starts. */}
-        <div className="space-y-2">
-          <PlaceholderMark />
-          <p>It hasn&apos;t launched yet. Leave your email and the first one comes to you.</p>
-        </div>
+        <p>It hasn&apos;t launched yet. Leave your email and the first one comes to you.</p>
       </div>
       <SubscribeForm />
     </section>

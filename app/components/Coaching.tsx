@@ -1,5 +1,4 @@
 import { BOOK_A_CHAT_URL, headingClass, primaryButtonClass, sectionClass } from "../site";
-import { PlaceholderMark } from "./Placeholder";
 
 export default function Coaching() {
   return (
@@ -12,11 +11,7 @@ export default function Coaching() {
           I got a coach before I became one. I&apos;d built a career that looked right on paper and
           never stopped to ask if I actually wanted it. My coach didn&apos;t give me answers.
         </p>
-        {/* PLACEHOLDER / TODO: Ben to confirm his coach's gender, or change "She" to "They" or "My coach". */}
-        <div className="space-y-2">
-          <PlaceholderMark />
-          <p>She asked better questions than I was asking myself.</p>
-        </div>
+        <p>She asked better questions than I was asking myself.</p>
       </div>
 
       <div className="mt-12 max-w-2xl space-y-8 text-[1.05rem] leading-relaxed text-ink">
@@ -39,29 +34,22 @@ export default function Coaching() {
         </div>
         <div>
           <h3 className="font-serif text-2xl text-ink">What I don&apos;t do</h3>
-          {/* PLACEHOLDER / TODO: Ben to confirm he is happy to say he is not a therapist, and that he won't rewrite a CV. */}
-          <div className="mt-3 space-y-2">
-            <PlaceholderMark />
-            <p>
-              I don&apos;t give advice or tell you what to do with your life. I&apos;m not a
-              therapist either, and I won&apos;t rewrite your CV.
-            </p>
-          </div>
+          <p className="mt-3">
+            I don&apos;t give advice or tell you what to do with your life. I&apos;m not a
+            therapist either, and I won&apos;t rewrite your CV.
+          </p>
         </div>
       </div>
 
-      {/* TODO: Ben to add one line on whether sessions are online, in person in London, or both. The draft has no wording for this, so nothing was invented. */}
       <p className="mt-10 max-w-2xl text-[1.05rem] text-ink">
         I&apos;m ICF-accredited (Associate Certified Coach, 2025).
       </p>
 
       <div className="mt-10 max-w-3xl rounded-3xl bg-lavender/45 px-6 py-8 sm:px-10 sm:py-10">
-        {/* PLACEHOLDER / TODO: Ben to confirm whether the first chat is free. Draft wording does not say free. */}
-        <PlaceholderMark />
-        <p className="mt-4 max-w-2xl font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
+        <p className="max-w-2xl font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
           If something&apos;s been on your mind for months and you still haven&apos;t said it out
-          loud, book a chat. The first one takes 60 minutes. Worst case, you get an hour to think
-          out loud with someone who has no stake in what you decide.
+          loud, book a chat. Worst case, you get to think out loud with someone who has no stake
+          in what you decide.
         </p>
         <a
           href={BOOK_A_CHAT_URL}

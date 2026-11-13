@@ -49,15 +49,13 @@ export const seo = {
   url: "https://benjaminoh.com/",
 } as const;
 
-// TODO: Ben still to confirm the job title wording ("AI Senior Offer Manager").
-// TODO: Ben still to confirm the two SEA Games sources at the end of sameAs.
 export const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Benjamin Oh",
   alternateName: "Ben Oh",
   url: "https://benjaminoh.com/",
-  jobTitle: "AI Senior Offer Manager",
+  jobTitle: "Global Offer Senior Manager - AI Transformations",
   worksFor: {
     "@type": "Organization",
     name: "BCG",

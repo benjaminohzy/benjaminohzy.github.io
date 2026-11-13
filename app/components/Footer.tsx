@@ -1,5 +1,4 @@
 import { links, navLinks } from "../site";
-import { PlaceholderMark } from "./Placeholder";
 
 function BeerCan() {
   return (
@@ -18,13 +17,9 @@ export default function Footer() {
     <footer className="gutter mx-auto w-full max-w-6xl pt-4 pb-[max(4rem,env(safe-area-inset-bottom))]">
       <div className="border-t border-navy/10 pt-12">
         <h2 className="font-serif text-3xl font-medium text-ink">Say hi</h2>
-        {/* PLACEHOLDER / TODO: Ben to confirm he is happy with "eventually". Cut it if not. */}
-        <div className="mt-4 max-w-xl space-y-2">
-          <PlaceholderMark />
-          <p className="text-[1.05rem] leading-relaxed text-ink">
-            Email is best. LinkedIn works too. I reply to everyone, eventually.
-          </p>
-        </div>
+        <p className="mt-4 max-w-xl text-[1.05rem] leading-relaxed text-ink">
+          Email is best. LinkedIn works too. I reply to everyone, eventually.
+        </p>
         <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 text-sm">
           <li>
             <a href={links.email} className="inline-flex min-h-11 items-center underline decoration-lavender underline-offset-4 hover:decoration-navy">
@@ -71,7 +66,6 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* TODO: Ben to confirm the year of the beer-can record. Do not add "Also 2015. It was a big year." unless he confirms it. */}
         <div className="beer-slide mt-12 max-w-xl">
           <div className="relative h-12">
             <div aria-hidden="true" className="absolute top-1/2 right-0 left-0 h-px bg-navy/15" />
@@ -79,7 +73,7 @@ export default function Footer() {
           </div>
           <p className="mt-3 text-sm leading-relaxed text-muted">
             Since you scrolled all the way down: I also hold the Singapore record for the longest
-            bar slide with a beer can.{" "}
+            bar slide with a beer can. That was 2018. It was a big year.{" "}
             <a
               href={links.beerCan}
               target="_blank"

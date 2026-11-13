@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PlaceholderMark } from "./Placeholder";
 import { links, primaryButtonClass, secondaryButtonClass } from "../site";
 
 function HiNote() {
@@ -43,9 +42,7 @@ export default function Hero() {
         </div>
 
         <div className="order-1 w-full max-w-xl">
-          {/* PLACEHOLDER / TODO: Ben to sign off this short opening. The examples stay in Background. */}
-          <PlaceholderMark />
-          <p className="mt-3 text-[1.05rem] leading-relaxed text-ink">
+          <p className="text-[1.05rem] leading-relaxed text-ink">
             Following the process has never got me to the next step. Finding the way has.
           </p>
           <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
