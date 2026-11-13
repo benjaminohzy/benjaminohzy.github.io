@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { headingClass, links, sectionClass } from "../site";
-import { PlaceholderMark } from "./Placeholder";
 
 const sectionHeading = "mt-12 font-serif text-2xl font-medium tracking-tight text-ink sm:text-3xl";
 
@@ -9,8 +8,7 @@ export default function About() {
     <section id="background" className={sectionClass}>
       <h2 className={headingClass}>Background</h2>
       <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink">
-        I&apos;m Ben. This is how I got here. I like starting from a real problem and building
-        something small that works. I also coach people who feel stuck.
+        I&apos;m Ben. This is how I got here. I also coach people who feel stuck.
       </p>
 
       <div className="mt-4 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink">
@@ -128,16 +126,6 @@ export default function About() {
           From November 2024 to February 2026 I was at BCG X. I&apos;m now a Global Offer Senior
           Manager - AI Transformations at BCG.
         </p>
-        {/* Still waiting on Ben's final OK for this sentence. */}
-        <div className="space-y-2">
-          <PlaceholderMark />
-          <p>
-            I work where AI meets value creation. I started in finance, restructuring and private
-            equity, and now work on taking AI offers to market at BCG. I like starting from a real
-            problem a team has, not an abstract use case, then building something small that works
-            and checking whether it actually saves time or money.
-          </p>
-        </div>
         <p>
           Somewhere in the middle of all that I got a coach. I was good at the job and a bit lost
           on everything else. It helped so much that I trained to do it myself, and got my ICF

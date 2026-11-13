@@ -43,9 +43,9 @@ export const headingClass =
 
 // BCG is named on purpose. Approved for this redesign.
 export const seo = {
-  title: "Benjamin Oh | AI go-to-market at BCG, and a career coach",
+  title: "Benjamin Oh | Where AI meets value creation",
   description:
-    "I'm Ben. Following the process has never got me to the next step. Finding the way has.",
+    "I'm Ben. I work where AI meets value creation, taking AI offers to market at BCG.",
   url: "https://benjaminoh.com/",
 } as const;
 

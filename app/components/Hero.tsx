@@ -42,21 +42,14 @@ export default function Hero() {
         </div>
 
         <div className="order-1 w-full max-w-xl">
-          <p className="text-[1.05rem] leading-relaxed text-ink">
-            Following the process has never got me to the next step. Finding the way has.
-          </p>
-          <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
-            I&apos;ve done that throughout my life. That&apos;s what got me here.
-          </p>
-          <h1 className="mt-8 font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-5xl leading-[0.95] font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             I&apos;m Ben.
           </h1>
-          <p className="mt-5 font-serif text-xl leading-snug text-ink sm:text-2xl">
-            Built on resilience, driven by curiosity.
-          </p>
-          <p className="mt-4 text-[1.05rem] leading-relaxed text-ink">
-            Right now I work on what to sell in AI, how to sell it, and how to drive adoption.
-            Enablement, GTM, and commercialisation.
+          <p className="mt-5 text-[1.05rem] leading-relaxed text-ink">
+            I work where AI meets value creation. I started in finance, restructuring and private
+            equity, and now work on taking AI offers to market at BCG. I like starting from a real
+            problem a team has, not an abstract use case, then building something small that works
+            and checking whether it actually saves time or money.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a href="#background" className={`${primaryButtonClass} w-full sm:w-auto`}>
