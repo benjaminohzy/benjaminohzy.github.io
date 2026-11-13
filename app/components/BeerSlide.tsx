@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const RECORD_METERS = 9.82;
+const SLIDE_MS = 2000;
 
 function BeerCan() {
   return (
@@ -35,26 +38,59 @@ function BeerCan() {
 
 export default function BeerSlide() {
   const [slid, setSlid] = useState(false);
+  const [meters, setMeters] = useState(0);
+  const [moving, setMoving] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const canRef = useRef<HTMLButtonElement>(null);
+  const frameRef = useRef(0);
+
+  useEffect(() => () => cancelAnimationFrame(frameRef.current), []);
+
+  function slide() {
+    const next = !slid;
+    setSlid(next);
+    setMoving(true);
+    cancelAnimationFrame(frameRef.current);
+    const started = performance.now();
+
+    function tick(now: number) {
+      const track = trackRef.current?.getBoundingClientRect();
+      const can = canRef.current?.getBoundingClientRect();
+      if (now - started >= SLIDE_MS || !track || !can) {
+        setMeters(next ? RECORD_METERS : 0);
+        setMoving(false);
+        return;
+      }
+      const travelled = (can.left - track.left) / (track.width - can.width);
+      setMeters(Math.min(Math.max(travelled, 0), 1) * RECORD_METERS);
+      frameRef.current = requestAnimationFrame(tick);
+    }
+
+    frameRef.current = requestAnimationFrame(tick);
+  }
+
+  const landed = slid && !moving;
 
   return (
     <div>
-      <div className="relative h-[4.5rem]">
+      <div ref={trackRef} className="relative h-[4.5rem]">
         <p
           aria-hidden="true"
-          className={`pointer-events-none absolute top-3 left-16 -rotate-2 font-hand text-2xl text-sg-red transition-opacity duration-300 ${slid ? "opacity-0" : "opacity-100"}`}
+          className={`pointer-events-none absolute top-3 left-16 -rotate-2 font-hand text-2xl text-sg-red transition-opacity duration-300 ${slid || moving ? "opacity-0" : "opacity-100"}`}
         >
           &larr; tap the can
         </p>
         <p
           aria-hidden="true"
-          className={`pointer-events-none absolute top-3 right-16 rotate-2 font-hand text-2xl text-sg-red transition-opacity duration-500 ${slid ? "opacity-100 delay-[1500ms]" : "opacity-0"}`}
+          className={`pointer-events-none absolute top-3 right-16 rotate-2 font-hand text-2xl text-sg-red transition-opacity duration-300 ${landed ? "opacity-100" : "opacity-0"}`}
         >
-          and it stays on the bar
+          Singapore record
         </p>
         <div className="beer-runner pointer-events-none absolute inset-0" data-slid={slid}>
           <button
+            ref={canRef}
             type="button"
-            onClick={() => setSlid((value) => !value)}
+            onClick={slide}
             aria-pressed={slid}
             aria-label={slid ? "Slide the beer can back" : "Slide the beer can down the bar"}
             className="beer-can-button pointer-events-auto block cursor-pointer rounded-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
@@ -64,12 +100,16 @@ export default function BeerSlide() {
         </div>
       </div>
       <div aria-hidden="true" className="h-3 rounded-[2px] border-b-4 border-[#8a4a2a] bg-clay" />
-      <div
-        aria-hidden="true"
-        className="mt-1.5 flex justify-between font-score text-xs font-medium tracking-[0.14em] text-muted uppercase"
-      >
-        <span>Start</span>
-        <span>End of the bar</span>
+      <div className="mt-1.5 flex items-baseline justify-between font-score font-medium tracking-[0.14em] text-muted uppercase">
+        <span aria-hidden="true" className="text-xs">
+          0 m
+        </span>
+        <span
+          role="status"
+          className={`tabular-nums transition-colors duration-300 ${landed ? "text-2xl font-bold text-sg-red" : "text-xs"}`}
+        >
+          {landed ? `${RECORD_METERS} meters` : `${meters.toFixed(2)} m`}
+        </span>
       </div>
     </div>
   );
